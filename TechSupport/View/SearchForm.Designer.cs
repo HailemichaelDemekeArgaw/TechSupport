@@ -32,67 +32,63 @@
             custIdLbl = new Label();
             custIdTxt = new TextBox();
             searchDataGrid = new DataGridView();
-
             ((System.ComponentModel.ISupportInitialize)searchDataGrid).BeginInit();
             SuspendLayout();
-
             // 
             // searchBtn
             // 
             searchBtn.BackColor = SystemColors.ButtonHighlight;
-            searchBtn.Location = new Point(261, 64);
+            searchBtn.Location = new Point(228, 48);
             searchBtn.Margin = new Padding(2);
             searchBtn.Name = "searchBtn";
-            searchBtn.Size = new Size(124, 34);
+            searchBtn.Size = new Size(108, 26);
             searchBtn.TabIndex = 4;
             searchBtn.Text = "Search";
             searchBtn.UseVisualStyleBackColor = false;
-
             // 
             // custIdLbl
             // 
             custIdLbl.AutoSize = true;
             custIdLbl.Font = new Font("Segoe UI", 9F);
-            custIdLbl.Location = new Point(67, 18);
+            custIdLbl.Location = new Point(59, 14);
             custIdLbl.Margin = new Padding(2, 0, 2, 0);
             custIdLbl.Name = "custIdLbl";
-            custIdLbl.Size = new Size(89, 20);
+            custIdLbl.Size = new Size(72, 15);
             custIdLbl.TabIndex = 5;
             custIdLbl.Text = "Customer Id";
-
             // 
             // custIdTxt
             // 
-            custIdTxt.Location = new Point(241, 17);
+            custIdTxt.Location = new Point(211, 13);
             custIdTxt.Margin = new Padding(2);
             custIdTxt.Name = "custIdTxt";
-            custIdTxt.Size = new Size(288, 27);
+            custIdTxt.Size = new Size(252, 23);
             custIdTxt.TabIndex = 1;
-
             // 
             // searchDataGrid
             // 
             searchDataGrid.BackgroundColor = SystemColors.Window;
             searchDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            searchDataGrid.Location = new Point(11, 142);
+            searchDataGrid.Location = new Point(10, 106);
             searchDataGrid.Margin = new Padding(2);
             searchDataGrid.Name = "searchDataGrid";
             searchDataGrid.RowHeadersWidth = 62;
-            searchDataGrid.Size = new Size(605, 158);
+            searchDataGrid.Size = new Size(529, 118);
             searchDataGrid.TabIndex = 6;
-
             // 
             // SearchForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(632, 353);
+            ClientSize = new Size(553, 265);
             Controls.Add(searchDataGrid);
             Controls.Add(custIdTxt);
             Controls.Add(custIdLbl);
             Controls.Add(searchBtn);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "SearchForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Search Incident";

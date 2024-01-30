@@ -35,74 +35,68 @@ namespace TechSupport.View
             searchBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)incidentDatagrid).BeginInit();
             SuspendLayout();
-
             // 
             // logoutLink
             // 
             logoutLink.AutoSize = true;
             logoutLink.Cursor = Cursors.Hand;
-            logoutLink.Location = new Point(574, 18);
+            logoutLink.Location = new Point(502, 14);
             logoutLink.Margin = new Padding(2, 0, 2, 0);
             logoutLink.Name = "logoutLink";
-            logoutLink.Size = new Size(56, 20);
+            logoutLink.Size = new Size(45, 15);
             logoutLink.TabIndex = 4;
             logoutLink.TabStop = true;
             logoutLink.Text = "Logout";
-
             // 
             // userNameLbl
             // 
             userNameLbl.AutoSize = true;
-            userNameLbl.Location = new Point(473, 18);
+            userNameLbl.Location = new Point(414, 14);
             userNameLbl.Margin = new Padding(2, 0, 2, 0);
             userNameLbl.Name = "userNameLbl";
-            userNameLbl.Size = new Size(78, 20);
+            userNameLbl.Size = new Size(62, 15);
             userNameLbl.TabIndex = 3;
             userNameLbl.Text = "UserName";
-
             // 
             // incidentDatagrid
             // 
             incidentDatagrid.BackgroundColor = SystemColors.Window;
             incidentDatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            incidentDatagrid.Location = new Point(105, 116);
+            incidentDatagrid.Location = new Point(92, 87);
             incidentDatagrid.Margin = new Padding(2);
             incidentDatagrid.Name = "incidentDatagrid";
             incidentDatagrid.RowHeadersWidth = 62;
-            incidentDatagrid.Size = new Size(485, 335);
+            incidentDatagrid.Size = new Size(424, 251);
             incidentDatagrid.TabIndex = 5;
-
             // 
             // addBtn
             // 
             addBtn.BackColor = Color.White;
-            addBtn.Location = new Point(63, 18);
+            addBtn.Location = new Point(55, 14);
             addBtn.Margin = new Padding(2);
             addBtn.Name = "addBtn";
-            addBtn.Size = new Size(121, 36);
+            addBtn.Size = new Size(106, 27);
             addBtn.TabIndex = 0;
             addBtn.Text = "Add Incident";
             addBtn.UseVisualStyleBackColor = false;
-
             // 
             // searchBtn
             // 
             searchBtn.BackColor = SystemColors.ButtonHighlight;
-            searchBtn.Location = new Point(189, 18);
+            searchBtn.Location = new Point(165, 14);
             searchBtn.Margin = new Padding(2);
             searchBtn.Name = "searchBtn";
-            searchBtn.Size = new Size(121, 36);
+            searchBtn.Size = new Size(106, 27);
             searchBtn.TabIndex = 1;
             searchBtn.Text = "Search Incident";
             searchBtn.UseVisualStyleBackColor = false;
-
             // 
-            // MainFrom
+            // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(732, 553);
+            ClientSize = new Size(640, 415);
             Controls.Add(searchBtn);
             Controls.Add(addBtn);
             Controls.Add(incidentDatagrid);
@@ -110,7 +104,9 @@ namespace TechSupport.View
             Controls.Add(logoutLink);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
-            Name = "MainFrom";
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
             ((System.ComponentModel.ISupportInitialize)incidentDatagrid).EndInit();
