@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TechSupport.View;
 
 namespace TechSupport.Controller
 {
-    internal class LoginController
+    static class LoginController
     {
+        public static Login login;
+        public static TextBox loginText;
+        public static TextBox passwordText;
+        public static Label errorLabel;
     }
 }
