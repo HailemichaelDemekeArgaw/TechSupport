@@ -1,5 +1,8 @@
 ﻿namespace TechSupport.View
 {
+    /// <summary>
+    ///  Manages the components that are used by the Search Form.
+    /// </summary>
     partial class SearchForm
     {
         /// <summary>
@@ -10,7 +13,7 @@
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing"> </param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))

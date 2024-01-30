@@ -14,7 +14,7 @@ namespace TechSupport.View
     {
         public Login()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }
