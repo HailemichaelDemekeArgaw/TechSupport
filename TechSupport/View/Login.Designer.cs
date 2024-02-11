@@ -1,4 +1,6 @@
-﻿namespace TechSupport.View
+﻿using TechSupport.Controller;
+
+namespace TechSupport.View
 {
     /// <summary>
     /// Represents the Login Form
@@ -69,6 +71,7 @@
             userNameTxt.Name = "userNameTxt";
             userNameTxt.Size = new Size(233, 34);
             userNameTxt.TabIndex = 1;
+            userNameTxt.KeyDown += userNameTxt_KeyDown;
 
             // 
             // passwordTxt
@@ -80,6 +83,7 @@
             passwordTxt.PasswordChar = '*';
             passwordTxt.Size = new Size(233, 34);
             passwordTxt.TabIndex = 2;
+            passwordTxt.KeyDown += passwordTxt_KeyDown;
 
             // 
             // headerLbl
@@ -105,6 +109,7 @@
             submitBtn.TabIndex = 3;
             submitBtn.Text = "Login";
             submitBtn.UseVisualStyleBackColor = false;
+            submitBtn.Click += submitBtn_Click;
 
             // 
             // errorLabel
@@ -139,6 +144,7 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login Form";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

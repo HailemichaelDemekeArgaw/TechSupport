@@ -12,7 +12,7 @@ namespace TechSupport
         {
             ApplicationConfiguration.Initialize();
             var loginForm = new Login();
-            loginForm.FormClosed += LoginController.LoginFormClosed_Event;
+            //loginForm.FormClosed += LoginController.LoginFormClosed_Event;
             loginForm.Show();
             Application.Run();
         }
