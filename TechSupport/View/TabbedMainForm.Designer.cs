@@ -348,7 +348,7 @@
             MinimizeBox = false;
             Name = "TabbedMainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "TabbedMainForm";
+            Text = "Dashboard";
             Load += TabbedMainForm_Load;
             tabControl.ResumeLayout(false);
             addIncident.ResumeLayout(false);
