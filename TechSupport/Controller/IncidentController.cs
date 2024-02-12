@@ -18,6 +18,7 @@ namespace TechSupport.Controller
 
         public static MainForm mainForm;
         public static DataGridView dataGridView;
+        public static TabbedMainForm tabbedMain;
 
         public IncidentController()
         {

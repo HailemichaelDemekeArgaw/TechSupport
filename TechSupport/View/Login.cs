@@ -32,9 +32,9 @@ namespace TechSupport.View
                 {
                     if (userNameTxt.Text == "jane" && passwordTxt.Text == "test1234")
                     {
-                        MainForm mainForm = new MainForm();
-                        mainForm.Show();
-                        mainForm.Controls["userNameLbl"].Text = userNameTxt.Text;
+                        TabbedMainForm tabbedMainForm = new TabbedMainForm();
+                        tabbedMainForm.Show();
+                        tabbedMainForm.Controls["userNameLbl"].Text = userNameTxt.Text;
                         this.Close();
 
                     }

@@ -215,8 +215,8 @@ namespace TechSupport.View
             Controls.Add(addHeaderLbl);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
-            //MaximizeBox = false;
-            //MinimizeBox = false;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AddIncident";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add Incident";
