@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TechSupport.Model
+﻿namespace TechSupport.Model
 {
     /// <summary>
     /// Represents an incident entity with properties for title, description, and customer ID.

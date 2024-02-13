@@ -61,6 +61,7 @@ namespace TechSupport.View
             custIdLbl.Size = new Size(89, 20);
             custIdLbl.TabIndex = 5;
             custIdLbl.Text = "Customer Id";
+
             // 
             // custIdTxt
             // 
@@ -69,6 +70,7 @@ namespace TechSupport.View
             custIdTxt.Name = "custIdTxt";
             custIdTxt.Size = new Size(288, 27);
             custIdTxt.TabIndex = 1;
+
             // 
             // searchDataGrid
             // 
@@ -80,6 +82,7 @@ namespace TechSupport.View
             searchDataGrid.RowHeadersWidth = 62;
             searchDataGrid.Size = new Size(455, 158);
             searchDataGrid.TabIndex = 6;
+
             // 
             // SearchForm
             // 

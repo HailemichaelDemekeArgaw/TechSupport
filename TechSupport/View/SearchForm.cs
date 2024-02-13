@@ -16,13 +16,13 @@ namespace TechSupport.View
         {
             InitializeComponent();
             _incidentController = new IncidentController();
-            //searchBtn.Click += SearchController.SearchButton_Event;
-            //SearchController.titleTxt = titleTxt;
-            //SearchController.descriptionTxt = descTxt;
-            //SearchController.customerIdTxt = custIdTxt;
-            //SearchController.searchGrid = searchDataGrid;
         }
 
+        /// <summary>
+        /// Handles the Click event of the searchBtn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see instance containing the event data.</param>
         private void searchBtn_Click(object sender, EventArgs e)
         {
             var customerId = !string.IsNullOrEmpty(custIdTxt.Text.ToString()) ? Convert.ToInt32(custIdTxt.Text) : 0;

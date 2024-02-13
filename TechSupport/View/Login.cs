@@ -14,14 +14,6 @@ namespace TechSupport.View
         public Login()
         {
             InitializeComponent();
-            //userNameTxt.KeyDown += LoginController.KeyDown_Event;
-            //passwordTxt.KeyDown += LoginController.KeyDown_Event;
-            //submitBtn.Click += LoginController.LoginButton_Click;
-            //errorLabel.Hide();
-            //LoginController.errorLabel = errorLabel;
-            //LoginController.loginText = userNameTxt;
-            //LoginController.passwordText = passwordTxt;
-            //LoginController.login = this;
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
@@ -62,21 +54,41 @@ namespace TechSupport.View
 
         }
 
+        /// <summary>
+        /// Handles the Load event of the Login control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The instance containing the event data.</param>
         private void Login_Load(object sender, EventArgs e)
         {
             errorLabel.Hide();
         }
 
+        /// <summary>
+        /// Handles the KeyDown event of the Login control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The instance containing the event data.</param>
         private void Login_KeyDown(object sender, KeyEventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the KeyDown event of the userNameTxt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The instance containing the event data.</param>
         private void userNameTxt_KeyDown(object sender, KeyEventArgs e)
         {
             errorLabel.Hide();
         }
 
+        /// <summary>
+        /// Handles the KeyDown event of the passwordTxt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The instance containing the event data.</param>
         private void passwordTxt_KeyDown(object sender, KeyEventArgs e)
         {
             errorLabel.Hide();

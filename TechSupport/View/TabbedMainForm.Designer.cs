@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             tabControl = new TabControl();
+            openIncident = new TabPage();
+            incidentlistView = new ListView();
             addIncident = new TabPage();
             messageLabel = new Label();
             CustIdErrMsg = new Label();
@@ -53,6 +55,7 @@
             userNameLbl = new Label();
             logoutLink = new LinkLabel();
             tabControl.SuspendLayout();
+            openIncident.SuspendLayout();
             addIncident.SuspendLayout();
             inciedentList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)incidentDatagrid).BeginInit();
@@ -65,6 +68,7 @@
             tabControl.Controls.Add(addIncident);
             tabControl.Controls.Add(inciedentList);
             tabControl.Controls.Add(searchIncident);
+            tabControl.Controls.Add(openIncident);
             tabControl.Location = new Point(55, 66);
             tabControl.Margin = new Padding(3, 2, 3, 2);
             tabControl.Name = "tabControl";
@@ -72,6 +76,26 @@
             tabControl.Size = new Size(690, 318);
             tabControl.TabIndex = 1;
             tabControl.SelectedIndexChanged += tabControl_SelectedIndexChanged;
+            // 
+            // openIncident
+            // 
+            openIncident.Controls.Add(incidentlistView);
+            openIncident.Location = new Point(4, 24);
+            openIncident.Name = "openIncident";
+            openIncident.Padding = new Padding(3);
+            openIncident.Size = new Size(682, 290);
+            openIncident.TabIndex = 3;
+            openIncident.Text = "Display Open Incident";
+            openIncident.UseVisualStyleBackColor = true;
+            openIncident.Click += openIncident_Click;
+            // 
+            // incidentlistView
+            // 
+            incidentlistView.Location = new Point(3, 3);
+            incidentlistView.Name = "incidentlistView";
+            incidentlistView.Size = new Size(673, 291);
+            incidentlistView.TabIndex = 0;
+            incidentlistView.UseCompatibleStateImageBehavior = false;
             // 
             // addIncident
             // 
@@ -351,6 +375,7 @@
             Text = "Dashboard";
             Load += TabbedMainForm_Load;
             tabControl.ResumeLayout(false);
+            openIncident.ResumeLayout(false);
             addIncident.ResumeLayout(false);
             addIncident.PerformLayout();
             inciedentList.ResumeLayout(false);
@@ -388,5 +413,7 @@
         private Button searchBtn;
         private Label userNameLbl;
         private LinkLabel logoutLink;
+        private TabPage openIncident;
+        private ListView incidentlistView;
     }
 }

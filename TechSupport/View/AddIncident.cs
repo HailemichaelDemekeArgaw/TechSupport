@@ -11,33 +11,26 @@ namespace TechSupport.View
     public partial class AddIncident : Form
     {
         private readonly IncidentController _incidentController;
+
+        /// <summary>
+        /// Initializes a new instance of the class.
+        /// </summary>
         public AddIncident()
         {
             InitializeComponent();
             _incidentController = new IncidentController();
-
-            //titleTxt.KeyDown += AddIncidentController.TitleKeyDown_Event;
-            //descTxt.KeyDown += AddIncidentController.DescKeyDown_Event;
-            //custIdTxt.KeyDown += AddIncidentController.CustIdKeyDown_Event;
-            //addBtn.Click += AddIncidentController.AddButton_Event;
-            //cancelBtn.Click += AddIncidentController.CancelButton_Event;
-
-
             TitleErrMsg.Hide();
             DescErrMsg.Hide();
             CustIdErrMsg.Hide();
             messageLabel.Hide();
 
-            //AddIncidentController.title = titleTxt;
-            //AddIncidentController.description = descTxt;
-            //AddIncidentController.customerId = custIdTxt;
-            //AddIncidentController.addIncident = this;
-            //AddIncidentController.titelErrLbl = TitleErrMsg;
-            //AddIncidentController.descErrLbl = DescErrMsg;
-            //AddIncidentController.custIdErrLbl = CustIdErrMsg;
-
         }
 
+        /// <summary>
+        /// Handles the Click event of the addBtn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The instance containing the event data.</param>
         private void addBtn_Click(object sender, EventArgs e)
             {
                 try
@@ -97,27 +90,42 @@ namespace TechSupport.View
                 messageLabel.Visible = true;
             }
 
-            private void cancelBtn_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Handles the Click event of the cancelBtn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The instance containing the event data.</param>
+        private void cancelBtn_Click(object sender, EventArgs e)
             {
-                //MainFormController.dataGridView.Visible = true;
-                // MainFrom mainFrom = new MainFrom();
-                //_incidentController.GetIncidentList();
-                // mainFrom.MainDataGridBinding();
-
                 this.Close();
             }
 
-            private void descTxt_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Handles the KeyDown event of the descTxt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The instance containing the event data.</param>
+        private void descTxt_KeyDown(object sender, KeyEventArgs e)
             {
                 DescErrMsg.Hide();
             }
 
-            private void titleTxt_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Handles the KeyDown event of the titleTxt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The instance containing the event data.</param>
+        private void titleTxt_KeyDown(object sender, KeyEventArgs e)
             {
                 TitleErrMsg.Hide();
             }
 
-            private void custIdTxt_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Handles the KeyDown event of the custIdTxt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The instance containing the event data.</param>
+        private void custIdTxt_KeyDown(object sender, KeyEventArgs e)
             {
                 CustIdErrMsg.Hide();
             }

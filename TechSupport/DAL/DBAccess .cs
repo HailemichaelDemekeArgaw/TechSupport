@@ -3,6 +3,9 @@ using System.Data.SqlClient;
 
 namespace TechSupport.DAL
 {
+    /// <summary>
+    /// Class represents the Data Base Access.
+    /// </summary>
     public class DBAccess
     {
         /// <summary>
@@ -11,7 +14,7 @@ namespace TechSupport.DAL
         /// <returns>return Database SQL connection</returns>
         public static SqlConnection GetSqlConnection()
         {
-            var conStr = "Data Source=.\\SQLEXPRESS; Initial Catalog=TechSupport; Integrated Security=true";
+            var conStr = "Data Source=localhost; Initial Catalog=TechSupport; Integrated Security=true";
             return new SqlConnection(conStr);
         }
 
@@ -20,7 +23,6 @@ namespace TechSupport.DAL
         /// </summary>
         /// <param name="sql">SQL Statement</param>
         /// <returns>Return Data table</returns>
-
         public static DataTable? ReturnDataTable(string sql)
         {
             try

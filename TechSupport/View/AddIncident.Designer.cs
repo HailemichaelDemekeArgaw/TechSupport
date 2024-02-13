@@ -7,7 +7,7 @@ namespace TechSupport.View
     /// </summary>
     partial class AddIncident
     {
-       
+
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -66,6 +66,7 @@ namespace TechSupport.View
             titleLbl.Size = new Size(42, 23);
             titleLbl.TabIndex = 6;
             titleLbl.Text = "Title";
+
             // 
             // titleTxt
             // 
