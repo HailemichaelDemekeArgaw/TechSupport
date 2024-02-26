@@ -16,5 +16,10 @@ namespace TechSupport.View
         {
             InitializeComponent();
         }
+
+        private void IncidentForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
