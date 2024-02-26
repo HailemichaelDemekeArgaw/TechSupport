@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TechSupport.Model
 {
-    internal class Technicians
+    public class Technicians
     {
+        public int TechID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
     }
 }
