@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
@@ -44,6 +45,43 @@ namespace TechSupport.DAL
             }
         }
 
+        public List<OpenIncidentsVM> ReturnIncidentsDataTable(string sql)
+        {
+            try
+            {
+                List<OpenIncidentsVM> openIncidents = new List<OpenIncidentsVM>();
+
+                using (SqlConnection connection = GetSqlConnection())
+                {
+
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                OpenIncidentsVM incident = new OpenIncidentsVM();
+                                incident.ProductCode = reader["ProductCode"].ToString();
+                                incident.DatedOpened = Convert.ToString(reader["DateOpened"]);
+                                incident.Customer = reader["Customer"].ToString();
+                                incident.Title = reader["Title"].ToString();
+                                incident.Technician = Convert.ToString(reader["Technician"] ?? "");
+                                openIncidents.Add(incident);
+                            }
+                        }
+                        connection.Close();
+                        command.Dispose();
+                    }
+                }
+                return openIncidents;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
     }
 }
-
