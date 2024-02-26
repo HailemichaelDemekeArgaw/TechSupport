@@ -2,6 +2,7 @@
 using TechSupport.Model;
 using TechSupport.View;
 using System.Data;
+using System.Diagnostics.Metrics;
 
 namespace TechSupport.Controller
 {
@@ -10,18 +11,26 @@ namespace TechSupport.Controller
     /// </summary>
     public class IncidentController
     {
+        private readonly IncidentDAL _incidentDAL;
+        private readonly TechniciansDAL _techniciansDAL;
+        private readonly CustomerDAL _customerDAL;
         private readonly IncidentService _incidentService;
 
-        public static MainForm mainForm;
-        public static DataGridView dataGridView;
-        public static TabbedMainForm tabbedMain;
+        private readonly DBAccess _dbAccess;
+        public MainFrom mainForm;
+        public DataGridView dataGridView;
+        public TabbedMainFrom tabbedMain;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IncidentController"/> class.
         /// </summary>
         public IncidentController()
         {
-            _incidentService = new IncidentService();
+            this._incidentDAL = new IncidentDAL();
+            this._customerDAL = new CustomerDAL();
+            this._techniciansDAL = new TechniciansDAL();
+            this._incidentService = new IncidentService();
+            _dbAccess = new DBAccess();
         }
 
         /// <summary>
@@ -31,7 +40,7 @@ namespace TechSupport.Controller
         /// <exception> incident - Incident cannot be null</exception>
         public void AddIncident(Incident incident)
         {
-            if (incident == null)
+            if(incident == null)
             {
                 throw new ArgumentNullException(nameof(incident), "Incident cannot be null");
             }
@@ -39,10 +48,17 @@ namespace TechSupport.Controller
             MainDataGridBinding();
 
         }
+
+        public string AddIncidentToDatabase(Incidents incident)
+        {
+            return this._incidentDAL.AddIncident(incident);
+        }
+
+
         /// <summary>
         /// Mains the data grid binding.
         /// </summary>
-        public static void MainDataGridBinding()
+        public void MainDataGridBinding()
         {
             IncidentService incidentService = new IncidentService();
             var incidentsList = incidentService.GetIncidentList(0);
@@ -62,11 +78,12 @@ namespace TechSupport.Controller
         /// <summary>
         /// Returns the incident list.
         /// </summary>
-        /// <returns>data table</returns>
-        public DataTable ReturnIncidentList()
+        /// <returns></returns>
+        public List<OpenIncidentsVM> ReturnIncidentList()
         {
-            string sql = "select I.ProductCode, convert(varchar(10),DateOpened,101) , C.Name[Customer], T.Name, I.Title  from Incidents I inner join Customers C on I.CustomerID=C.CustomerID Left join Technicians T on I.TechID=T.TechID";
-            DataTable dataTable = DBAccess.ReturnDataTable(sql);
+            string sql = "select I.ProductCode As [ProductCode],convert(varchar(10),DateOpened,101) As DateOpened, C.Name[Customer], T.Name As Technician, I.Title  from Incidents I inner join Customers C on I.CustomerID=C.CustomerID Left join Technicians T on I.TechID=T.TechID where I.DateClosed is null";
+            List<OpenIncidentsVM> dataTable = _dbAccess.ReturnIncidentsDataTable(sql);
+
             return dataTable;
         }
 
