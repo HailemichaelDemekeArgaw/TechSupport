@@ -8,5 +8,10 @@
         public string Title { get; set; }
         public string Description { get; set; }
         public int CustomerId { get; set; }
+        public string ProductCode { get; set; }
+        public int TechId { get; set; }
+        public DateTime DateOpened { get; set; }
+
+
     }
 }
