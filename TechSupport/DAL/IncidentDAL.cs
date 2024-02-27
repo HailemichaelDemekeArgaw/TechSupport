@@ -17,38 +17,47 @@ namespace TechSupport.DAL
                 string insertIncident = "insert into Incidents(CustomerID, ProductCode, DateOpened,Title, Description) " +
                           "values(@customerID, @productCode,@dateOpened, @title, @description)";
 
-                string message = CheckRegistratioAssociation(incident.CustomerId, incident.ProductCode);
-                using (SqlConnection connection = DBAccess.GetSqlConnection())
+                string message = "";
+                bool customerAssoc = CheckRegistratioAssociation(incident.CustomerId, incident.ProductCode);
+                if (customerAssoc == true)
                 {
-                    try
+                    message = "Incident is succefully added! ";
+                    using (SqlConnection connection = DBAccess.GetSqlConnection())
                     {
-                        connection.Open();
-
-                        using (SqlCommand selectCommand = new SqlCommand(insertIncident, connection))
+                        try
                         {
+                            connection.Open();
 
-                            selectCommand.Parameters.Add("@customerID", System.Data.SqlDbType.Int);
-                            selectCommand.Parameters["@customerID"].Value = incident.CustomerId;
-                            selectCommand.Parameters.Add("@productCode", System.Data.SqlDbType.VarChar);
-                            selectCommand.Parameters["@productCode"].Value = incident.ProductCode;
-                            selectCommand.Parameters.Add("@dateOpened", System.Data.SqlDbType.DateTime);
-                            selectCommand.Parameters["@dateOpened"].Value = DateTime.Now;
-                            selectCommand.Parameters.Add("@title", System.Data.SqlDbType.VarChar);
-                            selectCommand.Parameters["@title"].Value = incident.Title;
-                            selectCommand.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
-                            selectCommand.Parameters["@description"].Value = incident.Description;
-                            selectCommand.ExecuteNonQuery();
-                            return message;
+                            using (SqlCommand selectCommand = new SqlCommand(insertIncident, connection))
+                            {
+
+                                selectCommand.Parameters.Add("@customerID", System.Data.SqlDbType.Int);
+                                selectCommand.Parameters["@customerID"].Value = incident.CustomerId;
+                                selectCommand.Parameters.Add("@productCode", System.Data.SqlDbType.VarChar);
+                                selectCommand.Parameters["@productCode"].Value = incident.ProductCode;
+                                selectCommand.Parameters.Add("@dateOpened", System.Data.SqlDbType.DateTime);
+                                selectCommand.Parameters["@dateOpened"].Value = DateTime.Now;
+                                selectCommand.Parameters.Add("@title", System.Data.SqlDbType.VarChar);
+                                selectCommand.Parameters["@title"].Value = incident.Title;
+                                selectCommand.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
+                                selectCommand.Parameters["@description"].Value = incident.Description;
+                                selectCommand.ExecuteNonQuery();
+                                return message;
+                            }
                         }
-                    }
-                    catch
-                    {
-                        connection.Close();
-                        return "Exception during incident registration";
-                    }
+                        catch
+                        {
+                            connection.Close();
+                            return "Exception during incident registration";
+                        }
 
-
+                    }
                 }
+                else
+                {
+                    return "Incident registration is not associated with the customer for the product";
+                }
+
             }
             catch
             {
@@ -57,16 +66,17 @@ namespace TechSupport.DAL
 
         }
 
+
         /// <summary>
         /// Method to check registratio asociatated customer with product
         /// </summary>
         /// <param name="CustomerId">Customer ID</param>
         /// /// <param name="ProductCode">Product Code</param>
         /// <returns>return registration incident is associated  customer with product</returns>
-        public string CheckRegistratioAssociation(int CustomerId, string ProductCode)
+        public Boolean CheckRegistratioAssociation(int CustomerId, string ProductCode)
         {
-            string message = "";
-            string sqlStatement = "select * from Incidents " +
+            bool associated = false;
+            string sqlStatement = "select * from Registrations " +
                 "where CustomerID=@customerID and ProductCode=@productCode";
             using (SqlConnection connection = DBAccess.GetSqlConnection())
             {
@@ -76,25 +86,22 @@ namespace TechSupport.DAL
                 {
                     selectCommand.Parameters.Add("@customerID", System.Data.SqlDbType.Int);
                     selectCommand.Parameters["@customerID"].Value = CustomerId;
-
                     selectCommand.Parameters.Add("@productCode", System.Data.SqlDbType.VarChar);
                     selectCommand.Parameters["@productCode"].Value = ProductCode;
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         if (reader.HasRows == true)
                         {
-                            message = "Incident registration is associated with the customer for the product";
+                            associated = true;
                         }
-                        else
-                        {
-                            message = "Incident registration is not associated with the customer for the product";
-                        }
+
                     }
                 }
             }
 
-            return message;
+            return associated;
         }
+
 
         /// <summary>
         /// Gets the incidents.
