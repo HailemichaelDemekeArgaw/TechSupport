@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace TechSupport.Model
 {
+    /// <summary>
+    /// Represents a clas for modeling product information
+    /// </summary>
     public class Products
     {
         [Key]

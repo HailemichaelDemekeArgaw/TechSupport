@@ -1,5 +1,4 @@
-﻿using System.Data;
-using TechSupport.Controller;
+﻿using TechSupport.Controller;
 using TechSupport.Model;
 
 namespace TechSupport.View
@@ -23,9 +22,9 @@ namespace TechSupport.View
             DescErrMsg.Hide();
             CustIdErrMsg.Hide();
             messageLabel.Hide();
-            IncidentController.dataGridView = incidentDatagrid;
-            IncidentController.tabbedMain = this;
-            IncidentController.MainDataGridBinding();
+            this._incidentController.dataGridView = incidentDatagrid;
+            this._incidentController.tabbedMain = this;
+            this._incidentController.MainDataGridBinding();
         }
 
         /// <summary>
@@ -35,40 +34,6 @@ namespace TechSupport.View
         {
             this.incidentDatagrid.DataSource = null;
             this.incidentDatagrid.DataSource = _incidentController.GetIncidentList();
-
-        }
-
-        /// <summary>
-        /// Opens the incident list.
-        /// </summary>
-        public void OpenIncidentList()
-        {
-            try
-            {
-
-                incidentlistView.Clear();
-                incidentlistView.View = System.Windows.Forms.View.Details;
-                incidentlistView.GridLines = true;
-                incidentlistView.Columns.Add("Product Code", 110);
-                incidentlistView.Columns.Add("Date Open", 90);
-                incidentlistView.Columns.Add("Customer", 150);
-                incidentlistView.Columns.Add("Technician", 150);
-                incidentlistView.Columns.Add("Ttile", 250);
-                DataTable dataSet = _incidentController.ReturnIncidentList();
-                foreach (DataRow dr in dataSet.Rows)
-                {
-                    var incidentList = incidentlistView.Items.Add(dr[0].ToString());
-                    incidentList.SubItems.Add(dr[1].ToString());
-                    incidentList.SubItems.Add(dr[2].ToString());
-                    incidentList.SubItems.Add(dr[3].ToString());
-                    incidentList.SubItems.Add(dr[4].ToString());
-                }
-            }
-            catch (Exception)
-            {
-                incidentlistView.Clear();
-                return;
-            }
 
         }
 
@@ -93,9 +58,10 @@ namespace TechSupport.View
             {
                 MainDataGridBinding();
             }
-            else if (tabControl.SelectedTab == tabControl.TabPages["openIncident"])
+            else if (tabControl.SelectedTab == tabControl.TabPages["tabAdd"])
             {
-                OpenIncidentList();
+                IncidentForm incidentForm = new IncidentForm();
+                incidentForm.ShowDialog();
             }
         }
 
@@ -200,9 +166,44 @@ namespace TechSupport.View
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the Click event of the openIncident control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void openIncident_Click(object sender, EventArgs e)
         {
-            OpenIncidentList();
+            //OpenIncidentList();
+        }
+
+        /// <summary>
+        /// Handles the TextChanged event of the titleTxt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void titleTxt_TextChanged(object sender, EventArgs e)
+        {
+            TitleErrMsg.Hide();
+        }
+
+        /// <summary>
+        /// Handles the TextChanged event of the descTxt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void descTxt_TextChanged(object sender, EventArgs e)
+        {
+            DescErrMsg.Hide();
+        }
+
+        /// <summary>
+        /// Handles the TextChanged event of the custIdTxt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void custIdTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustIdErrMsg.Hide();
         }
     }
 }

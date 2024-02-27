@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 using TechSupport.Model;
 
 
@@ -14,6 +9,10 @@ namespace TechSupport.DAL
     /// </summary>
     public class CustomerDAL
     {
+        /// <summary>
+        /// Gets the customers.
+        /// </summary>
+        /// <returns>customerList</returns>
         public List<Customers> GetCustomers()
         {
             List<Customers> customerList = new List<Customers>();

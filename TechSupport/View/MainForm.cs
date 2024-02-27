@@ -1,7 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System.Windows.Forms;
-using TechSupport.Controller;
-using TechSupport.DAL;
+﻿using TechSupport.Controller;
 
 namespace TechSupport.View
 {
@@ -10,7 +7,7 @@ namespace TechSupport.View
     /// </summary>
     public partial class MainForm : Form
     {
-        private readonly IncidentController _incidentController;
+        private IncidentController _incidentController;
 
         /// <summary>
         /// Initializes a new instance of the MainForm class.
@@ -18,10 +15,10 @@ namespace TechSupport.View
         public MainForm()
         {
             InitializeComponent();
-            _incidentController = new IncidentController();
-            IncidentController.dataGridView = incidentDatagrid;
-            IncidentController.mainForm = this;
-            IncidentController.MainDataGridBinding();
+            this._incidentController = new IncidentController();
+            this._incidentController.dataGridView = incidentDatagrid;
+            this._incidentController.mainForm = this;
+            this._incidentController.MainDataGridBinding();
         }
 
         /// <summary>

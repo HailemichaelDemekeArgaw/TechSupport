@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -13,11 +8,11 @@ namespace TechSupport.DAL
     /// </summary>
     public class ProductDAL
     {
+        
         /// <summary>
         /// Method to get list of customer data from database based on sql statment.
         /// </summary>
         /// <returns>Return Product list</returns>
-
         public List<Products> GetProducts()
         {
             List<Products> productList = new List<Products>();

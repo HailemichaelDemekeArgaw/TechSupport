@@ -1,6 +1,4 @@
-﻿using TechSupport.Controller;
-
-namespace TechSupport.View
+﻿namespace TechSupport.View
 {
     /// <summary>
     /// Represents the Main FORM UI features

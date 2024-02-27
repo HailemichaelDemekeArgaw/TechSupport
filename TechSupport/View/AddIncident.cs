@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using TechSupport.Controller;
+﻿using TechSupport.Controller;
 using TechSupport.Model;
 
 namespace TechSupport.View
@@ -32,63 +31,63 @@ namespace TechSupport.View
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
         private void addBtn_Click(object sender, EventArgs e)
+        {
+            try
             {
-                try
+                bool checkCustomerIdisNumeric = int.TryParse(custIdTxt.Text, out int id);
+                if (!string.IsNullOrEmpty(titleTxt.Text) && !string.IsNullOrEmpty(descTxt.Text) && !string.IsNullOrEmpty(custIdTxt.Text) && checkCustomerIdisNumeric == true)
                 {
-                    bool checkCustomerIdisNumeric = int.TryParse(custIdTxt.Text, out int id);
-                    if (!string.IsNullOrEmpty(titleTxt.Text) && !string.IsNullOrEmpty(descTxt.Text) && !string.IsNullOrEmpty(custIdTxt.Text) && checkCustomerIdisNumeric == true)
+
+                    var incident = new Incident()
                     {
-
-                        var incident = new Incident()
-                        {
-                            Title = titleTxt.Text,
-                            Description = descTxt.Text,
-                            CustomerId = Convert.ToInt32(custIdTxt.Text)
-                        };
-                        _incidentController.AddIncident(incident);
-                        messageLabel.ForeColor = Color.Green;
-                        messageLabel.Text = "Add incident is successful!";
-                        this.Close();
-
-                    }
-                    else
-                    {
-                        if (string.IsNullOrEmpty(titleTxt.Text))
-                        {
-                            TitleErrMsg.Text = "Title is required.";
-                            TitleErrMsg.ForeColor = Color.Red;
-                            TitleErrMsg.Show();
-                        }
-                        if (string.IsNullOrEmpty(descTxt.Text))
-                        {
-                            DescErrMsg.Text = "description is required.";
-                            DescErrMsg.ForeColor = Color.Red;
-                            DescErrMsg.Show();
-                        }
-                        if (string.IsNullOrEmpty(custIdTxt.Text))
-                        {
-                            CustIdErrMsg.Text = "CustomerId is required.";
-                            CustIdErrMsg.ForeColor = Color.Red;
-                            CustIdErrMsg.Show();
-                        }
-
-                        if (checkCustomerIdisNumeric == false && !string.IsNullOrEmpty(custIdTxt.Text))
-                        {
-                            CustIdErrMsg.Text = "CustomerId is should be number.";
-                            CustIdErrMsg.ForeColor = Color.Red;
-                            CustIdErrMsg.Show();
-                        }
-                        messageLabel.Hide();
-                    }
+                        Title = titleTxt.Text,
+                        Description = descTxt.Text,
+                        CustomerId = Convert.ToInt32(custIdTxt.Text)
+                    };
+                    _incidentController.AddIncident(incident);
+                    messageLabel.ForeColor = Color.Green;
+                    messageLabel.Text = "Add incident is successful!";
+                    this.Close();
 
                 }
-                catch (Exception)
+                else
                 {
-                    messageLabel.Text = "Exception during adding incident!";
-                    messageLabel.ForeColor = Color.Red;
+                    if (string.IsNullOrEmpty(titleTxt.Text))
+                    {
+                        TitleErrMsg.Text = "Title is required.";
+                        TitleErrMsg.ForeColor = Color.Red;
+                        TitleErrMsg.Show();
+                    }
+                    if (string.IsNullOrEmpty(descTxt.Text))
+                    {
+                        DescErrMsg.Text = "description is required.";
+                        DescErrMsg.ForeColor = Color.Red;
+                        DescErrMsg.Show();
+                    }
+                    if (string.IsNullOrEmpty(custIdTxt.Text))
+                    {
+                        CustIdErrMsg.Text = "CustomerId is required.";
+                        CustIdErrMsg.ForeColor = Color.Red;
+                        CustIdErrMsg.Show();
+                    }
+
+                    if (checkCustomerIdisNumeric == false && !string.IsNullOrEmpty(custIdTxt.Text))
+                    {
+                        CustIdErrMsg.Text = "CustomerId is should be number.";
+                        CustIdErrMsg.ForeColor = Color.Red;
+                        CustIdErrMsg.Show();
+                    }
+                    messageLabel.Hide();
                 }
-                messageLabel.Visible = true;
+
             }
+            catch (Exception)
+            {
+                messageLabel.Text = "Exception during adding incident!";
+                messageLabel.ForeColor = Color.Red;
+            }
+            messageLabel.Visible = true;
+        }
 
         /// <summary>
         /// Handles the Click event of the cancelBtn control.
@@ -96,9 +95,9 @@ namespace TechSupport.View
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
         private void cancelBtn_Click(object sender, EventArgs e)
-            {
-                this.Close();
-            }
+        {
+            this.Close();
+        }
 
         /// <summary>
         /// Handles the KeyDown event of the descTxt control.
@@ -106,9 +105,9 @@ namespace TechSupport.View
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
         private void descTxt_KeyDown(object sender, KeyEventArgs e)
-            {
-                DescErrMsg.Hide();
-            }
+        {
+            DescErrMsg.Hide();
+        }
 
         /// <summary>
         /// Handles the KeyDown event of the titleTxt control.
@@ -116,9 +115,9 @@ namespace TechSupport.View
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
         private void titleTxt_KeyDown(object sender, KeyEventArgs e)
-            {
-                TitleErrMsg.Hide();
-            }
+        {
+            TitleErrMsg.Hide();
+        }
 
         /// <summary>
         /// Handles the KeyDown event of the custIdTxt control.
@@ -126,8 +125,13 @@ namespace TechSupport.View
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
         private void custIdTxt_KeyDown(object sender, KeyEventArgs e)
-            {
-                CustIdErrMsg.Hide();
-            }
+        {
+            CustIdErrMsg.Hide();
+        }
+
+        private void titleTxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
+}

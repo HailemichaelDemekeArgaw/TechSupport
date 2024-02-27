@@ -1,8 +1,6 @@
 ﻿using TechSupport.DAL;
 using TechSupport.Model;
 using TechSupport.View;
-using System.Data;
-using System.Diagnostics.Metrics;
 
 namespace TechSupport.Controller
 {
@@ -17,9 +15,9 @@ namespace TechSupport.Controller
         private readonly IncidentService _incidentService;
 
         private readonly DBAccess _dbAccess;
-        public MainFrom mainForm;
+        public MainForm mainForm;
         public DataGridView dataGridView;
-        public TabbedMainFrom tabbedMain;
+        public TabbedMainForm tabbedMain;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IncidentController"/> class.
@@ -49,6 +47,11 @@ namespace TechSupport.Controller
 
         }
 
+        /// <summary>
+        /// Adds the incident to database.
+        /// </summary>
+        /// <param name="incident">The incident.</param>
+        /// <returns></returns>
         public string AddIncidentToDatabase(Incidents incident)
         {
             return this._incidentDAL.AddIncident(incident);

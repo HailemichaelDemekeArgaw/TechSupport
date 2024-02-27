@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TechSupport.Model
+﻿namespace TechSupport.Model
 {
+
+    /// <summary>
+    /// A model class representing Customers
+    /// </summary>
     public class Customers
     {
         public int CustomerId { get; set; }

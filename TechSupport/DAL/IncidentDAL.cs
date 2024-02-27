@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 using TechSupport.Model;
-using TechSupport.View;
 
 namespace TechSupport.DAL
 {
@@ -63,7 +57,6 @@ namespace TechSupport.DAL
 
         }
 
-
         /// <summary>
         /// Method to check registratio asociatated customer with product
         /// </summary>
@@ -103,7 +96,10 @@ namespace TechSupport.DAL
             return message;
         }
 
-
+        /// <summary>
+        /// Gets the incidents.
+        /// </summary>
+        /// <returns></returns>
         public List<Incidents> GetIncidents()
         {
             List<Incidents> incidentList = new List<Incidents>();

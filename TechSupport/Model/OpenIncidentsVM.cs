@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TechSupport.Model
+﻿namespace TechSupport.Model
 {
+    /// <summary>
+    /// Class repesenting open incidnets
+    /// </summary>
     public class OpenIncidentsVM
     {
         public string ProductCode { get; set; }

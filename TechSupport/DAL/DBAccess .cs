@@ -45,6 +45,11 @@ namespace TechSupport.DAL
             }
         }
 
+        /// <summary>
+        /// Returns the incidents data table.
+        /// </summary>
+        /// <param name="sql">The SQL.</param>
+        /// <returns></returns>
         public List<OpenIncidentsVM> ReturnIncidentsDataTable(string sql)
         {
             try

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TechSupport.Model
+﻿namespace TechSupport.Model
 {
+    /// <summary>
+    /// Represents an incident entity with properties.
+    /// </summary>
     public class Incidents
     {
         public int IncidentID { get; set; }

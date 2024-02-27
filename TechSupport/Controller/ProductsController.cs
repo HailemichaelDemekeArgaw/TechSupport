@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TechSupport.DAL;
+﻿using TechSupport.DAL;
 using TechSupport.Model;
 
 
 namespace TechSupport.Controller
 {
+    /// <summary>
+    /// Class representing the product controller
+    /// </summary>
     public class ProductsController
     {
         private readonly ProductDAL _productDAL;
@@ -17,6 +15,10 @@ namespace TechSupport.Controller
             this._productDAL = new ProductDAL();
         }
 
+        /// <summary>
+        /// Gets the products.
+        /// </summary>
+        /// <returns></returns>
         public List<Products> GetProducts()
         {
             return this._productDAL.GetProducts();

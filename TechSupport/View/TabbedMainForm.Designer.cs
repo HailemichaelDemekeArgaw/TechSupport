@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             tabControl = new TabControl();
-            openIncident = new TabPage();
-            incidentlistView = new ListView();
             addIncident = new TabPage();
             messageLabel = new Label();
             CustIdErrMsg = new Label();
@@ -52,15 +50,18 @@
             customerIdTxt = new TextBox();
             label1 = new Label();
             searchBtn = new Button();
+            openIncident = new TabPage();
+            openIncidentuc1 = new OpenIncidentUC();
+            tabAdd = new TabPage();
             userNameLbl = new Label();
             logoutLink = new LinkLabel();
             tabControl.SuspendLayout();
-            openIncident.SuspendLayout();
             addIncident.SuspendLayout();
             inciedentList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)incidentDatagrid).BeginInit();
             searchIncident.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)searchDataGrid).BeginInit();
+            openIncident.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl
@@ -69,33 +70,14 @@
             tabControl.Controls.Add(inciedentList);
             tabControl.Controls.Add(searchIncident);
             tabControl.Controls.Add(openIncident);
+            tabControl.Controls.Add(tabAdd);
             tabControl.Location = new Point(55, 66);
             tabControl.Margin = new Padding(3, 2, 3, 2);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new Size(690, 318);
+            tabControl.Size = new Size(932, 368);
             tabControl.TabIndex = 1;
             tabControl.SelectedIndexChanged += tabControl_SelectedIndexChanged;
-            // 
-            // openIncident
-            // 
-            openIncident.Controls.Add(incidentlistView);
-            openIncident.Location = new Point(4, 24);
-            openIncident.Name = "openIncident";
-            openIncident.Padding = new Padding(3);
-            openIncident.Size = new Size(682, 290);
-            openIncident.TabIndex = 3;
-            openIncident.Text = "Display Open Incident";
-            openIncident.UseVisualStyleBackColor = true;
-            openIncident.Click += openIncident_Click;
-            // 
-            // incidentlistView
-            // 
-            incidentlistView.Location = new Point(3, 3);
-            incidentlistView.Name = "incidentlistView";
-            incidentlistView.Size = new Size(673, 291);
-            incidentlistView.TabIndex = 0;
-            incidentlistView.UseCompatibleStateImageBehavior = false;
             // 
             // addIncident
             // 
@@ -116,7 +98,7 @@
             addIncident.Margin = new Padding(3, 2, 3, 2);
             addIncident.Name = "addIncident";
             addIncident.Padding = new Padding(3, 2, 3, 2);
-            addIncident.Size = new Size(682, 290);
+            addIncident.Size = new Size(924, 340);
             addIncident.TabIndex = 0;
             addIncident.Text = "Add Incident";
             addIncident.UseVisualStyleBackColor = true;
@@ -194,6 +176,7 @@
             custIdTxt.Name = "custIdTxt";
             custIdTxt.Size = new Size(237, 25);
             custIdTxt.TabIndex = 16;
+            custIdTxt.TextChanged += custIdTxt_TextChanged;
             // 
             // custIdLbl
             // 
@@ -214,6 +197,7 @@
             descTxt.Name = "descTxt";
             descTxt.Size = new Size(237, 25);
             descTxt.TabIndex = 15;
+            descTxt.TextChanged += descTxt_TextChanged;
             // 
             // descLbl
             // 
@@ -234,6 +218,7 @@
             titleTxt.Name = "titleTxt";
             titleTxt.Size = new Size(237, 25);
             titleTxt.TabIndex = 14;
+            titleTxt.TextChanged += titleTxt_TextChanged;
             // 
             // titleLbl
             // 
@@ -264,7 +249,7 @@
             inciedentList.Margin = new Padding(3, 2, 3, 2);
             inciedentList.Name = "inciedentList";
             inciedentList.Padding = new Padding(3, 2, 3, 2);
-            inciedentList.Size = new Size(682, 290);
+            inciedentList.Size = new Size(924, 340);
             inciedentList.TabIndex = 2;
             inciedentList.Text = "Incident List";
             inciedentList.UseVisualStyleBackColor = true;
@@ -290,7 +275,7 @@
             searchIncident.Margin = new Padding(3, 2, 3, 2);
             searchIncident.Name = "searchIncident";
             searchIncident.Padding = new Padding(3, 2, 3, 2);
-            searchIncident.Size = new Size(682, 290);
+            searchIncident.Size = new Size(924, 340);
             searchIncident.TabIndex = 1;
             searchIncident.Text = "Search Incident";
             searchIncident.UseVisualStyleBackColor = true;
@@ -337,10 +322,40 @@
             searchBtn.UseVisualStyleBackColor = false;
             searchBtn.Click += searchBtn_Click;
             // 
+            // openIncident
+            // 
+            openIncident.Controls.Add(openIncidentuc1);
+            openIncident.Location = new Point(4, 24);
+            openIncident.Name = "openIncident";
+            openIncident.Padding = new Padding(3);
+            openIncident.Size = new Size(924, 340);
+            openIncident.TabIndex = 3;
+            openIncident.Text = "Display Open Incident";
+            openIncident.UseVisualStyleBackColor = true;
+            openIncident.Click += openIncident_Click;
+            // 
+            // openIncidentuc1
+            // 
+            openIncidentuc1.Location = new Point(3, 5);
+            openIncidentuc1.Margin = new Padding(3, 2, 3, 2);
+            openIncidentuc1.Name = "openIncidentuc1";
+            openIncidentuc1.Size = new Size(928, 332);
+            openIncidentuc1.TabIndex = 0;
+            // 
+            // tabAdd
+            // 
+            tabAdd.Location = new Point(4, 24);
+            tabAdd.Name = "tabAdd";
+            tabAdd.Padding = new Padding(3);
+            tabAdd.Size = new Size(924, 340);
+            tabAdd.TabIndex = 4;
+            tabAdd.Text = "Add";
+            tabAdd.UseVisualStyleBackColor = true;
+            // 
             // userNameLbl
             // 
             userNameLbl.AutoSize = true;
-            userNameLbl.Location = new Point(632, 21);
+            userNameLbl.Location = new Point(832, 19);
             userNameLbl.Margin = new Padding(2, 0, 2, 0);
             userNameLbl.Name = "userNameLbl";
             userNameLbl.Size = new Size(62, 15);
@@ -351,7 +366,7 @@
             // 
             logoutLink.AutoSize = true;
             logoutLink.Cursor = Cursors.Hand;
-            logoutLink.Location = new Point(720, 21);
+            logoutLink.Location = new Point(920, 19);
             logoutLink.Margin = new Padding(2, 0, 2, 0);
             logoutLink.Name = "logoutLink";
             logoutLink.Size = new Size(45, 15);
@@ -364,7 +379,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1036, 485);
             Controls.Add(userNameLbl);
             Controls.Add(logoutLink);
             Controls.Add(tabControl);
@@ -375,7 +390,6 @@
             Text = "Dashboard";
             Load += TabbedMainForm_Load;
             tabControl.ResumeLayout(false);
-            openIncident.ResumeLayout(false);
             addIncident.ResumeLayout(false);
             addIncident.PerformLayout();
             inciedentList.ResumeLayout(false);
@@ -383,6 +397,7 @@
             searchIncident.ResumeLayout(false);
             searchIncident.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)searchDataGrid).EndInit();
+            openIncident.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -414,6 +429,7 @@
         private Label userNameLbl;
         private LinkLabel logoutLink;
         private TabPage openIncident;
-        private ListView incidentlistView;
+        private OpenIncidentUC openIncidentuc1;
+        private TabPage tabAdd;
     }
 }

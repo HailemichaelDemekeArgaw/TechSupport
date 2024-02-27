@@ -1,61 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TechSupport.Controller;
-using TechSupport.Model;
-
-namespace TechSupport.View
+﻿namespace TechSupport.View
 {
-    partial class OpenIncidentUC : UserControl
+    partial class OpenIncidentUC
     {
-        private readonly IncidentController _incidentController;
-        public OpenIncidentUC()
-        {
-            InitializeComponent();
-            this._incidentController = new IncidentController();
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-        }
-
-        public void OpenIncidentList()
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
         {
-            try
+            if (disposing && (components != null))
             {
-
-                incidentlistView.Clear();
-                incidentlistView.View = System.Windows.Forms.View.Details;
-                incidentlistView.GridLines = true;
-                incidentlistView.Columns.Add("Product Code", 110);
-                incidentlistView.Columns.Add("Date Opened", 125);
-                incidentlistView.Columns.Add("Customer", 170);
-                incidentlistView.Columns.Add("Technician", 170);
-                incidentlistView.Columns.Add("Title", 340);
-                List<OpenIncidentsVM> dataSet = _incidentController.ReturnIncidentList();
-                foreach (var dr in dataSet)
-                {
-                    var incidentList = incidentlistView.Items.Add(dr.ProductCode.ToString());
-                    incidentList.SubItems.Add(dr.DatedOpened.ToString());
-                    incidentList.SubItems.Add(dr.Customer.ToString());
-                    incidentList.SubItems.Add(dr.Technician.ToString());
-                    incidentList.SubItems.Add(dr.Title.ToString());
-                }
+                components.Dispose();
             }
-            catch (Exception)
-            {
-                incidentlistView.Clear();
-                return;
-            }
-
+            base.Dispose(disposing);
         }
 
-        private void OpenIncidentUC_Load(object sender, EventArgs e)
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
         {
-            OpenIncidentList();
+            incidentlistView = new ListView();
+            SuspendLayout();
+            // 
+            // incidentlistView
+            // 
+            incidentlistView.Location = new Point(3, 2);
+            incidentlistView.Margin = new Padding(3, 2, 3, 2);
+            incidentlistView.Name = "incidentlistView";
+            incidentlistView.Size = new Size(900, 320);
+            incidentlistView.TabIndex = 0;
+            incidentlistView.UseCompatibleStateImageBehavior = false;
+            incidentlistView.SelectedIndexChanged += incidentlistView_SelectedIndexChanged;
+            // 
+            // OpenIncidentUC
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(incidentlistView);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "OpenIncidentUC";
+            Size = new Size(921, 334);
+            Load += OpenIncidentUC_Load;
+            ResumeLayout(false);
         }
+
+        #endregion
+
+        private ListView incidentlistView;
     }
 }

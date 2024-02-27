@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TechSupport.Model
+﻿namespace TechSupport.Model
 {
+
+    /// <summary>
+    /// Represents a clas for modeling Technician information
+    /// </summary>
     public class Technicians
     {
         public int TechID { get; set; }
