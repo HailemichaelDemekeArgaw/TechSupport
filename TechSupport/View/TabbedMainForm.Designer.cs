@@ -29,336 +29,96 @@
         private void InitializeComponent()
         {
             tabControl = new TabControl();
-            addIncident = new TabPage();
-            messageLabel = new Label();
-            CustIdErrMsg = new Label();
-            DescErrMsg = new Label();
-            TitleErrMsg = new Label();
-            cancelBtn = new Button();
-            addBtn = new Button();
-            custIdTxt = new TextBox();
-            custIdLbl = new Label();
-            descTxt = new TextBox();
-            descLbl = new Label();
-            titleTxt = new TextBox();
-            titleLbl = new Label();
-            addHeaderLbl = new Label();
-            inciedentList = new TabPage();
-            incidentDatagrid = new DataGridView();
-            searchIncident = new TabPage();
-            searchDataGrid = new DataGridView();
-            customerIdTxt = new TextBox();
-            label1 = new Label();
-            searchBtn = new Button();
             openIncident = new TabPage();
             openIncidentuc1 = new OpenIncidentUC();
             tabAdd = new TabPage();
+            IncidentForm = new IncidentForm();
+            updateIncident = new TabPage();
+            updateIncidentuc1 = new UpdateIncidentUC();
             userNameLbl = new Label();
             logoutLink = new LinkLabel();
             tabControl.SuspendLayout();
-            addIncident.SuspendLayout();
-            inciedentList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)incidentDatagrid).BeginInit();
-            searchIncident.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)searchDataGrid).BeginInit();
             openIncident.SuspendLayout();
+            tabAdd.SuspendLayout();
+            updateIncident.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl
             // 
-            tabControl.Controls.Add(addIncident);
-            tabControl.Controls.Add(inciedentList);
-            tabControl.Controls.Add(searchIncident);
             tabControl.Controls.Add(openIncident);
             tabControl.Controls.Add(tabAdd);
-            tabControl.Location = new Point(55, 66);
-            tabControl.Margin = new Padding(3, 2, 3, 2);
+            tabControl.Controls.Add(updateIncident);
+            tabControl.Location = new Point(63, 68);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new Size(932, 368);
+            tabControl.Size = new Size(1065, 705);
             tabControl.TabIndex = 1;
-            tabControl.SelectedIndexChanged += tabControl_SelectedIndexChanged;
-            // 
-            // addIncident
-            // 
-            addIncident.Controls.Add(messageLabel);
-            addIncident.Controls.Add(CustIdErrMsg);
-            addIncident.Controls.Add(DescErrMsg);
-            addIncident.Controls.Add(TitleErrMsg);
-            addIncident.Controls.Add(cancelBtn);
-            addIncident.Controls.Add(addBtn);
-            addIncident.Controls.Add(custIdTxt);
-            addIncident.Controls.Add(custIdLbl);
-            addIncident.Controls.Add(descTxt);
-            addIncident.Controls.Add(descLbl);
-            addIncident.Controls.Add(titleTxt);
-            addIncident.Controls.Add(titleLbl);
-            addIncident.Controls.Add(addHeaderLbl);
-            addIncident.Location = new Point(4, 24);
-            addIncident.Margin = new Padding(3, 2, 3, 2);
-            addIncident.Name = "addIncident";
-            addIncident.Padding = new Padding(3, 2, 3, 2);
-            addIncident.Size = new Size(924, 340);
-            addIncident.TabIndex = 0;
-            addIncident.Text = "Add Incident";
-            addIncident.UseVisualStyleBackColor = true;
-            // 
-            // messageLabel
-            // 
-            messageLabel.AutoSize = true;
-            messageLabel.Location = new Point(214, 210);
-            messageLabel.Name = "messageLabel";
-            messageLabel.Size = new Size(0, 15);
-            messageLabel.TabIndex = 25;
-            // 
-            // CustIdErrMsg
-            // 
-            CustIdErrMsg.AutoSize = true;
-            CustIdErrMsg.ForeColor = SystemColors.ControlText;
-            CustIdErrMsg.Location = new Point(214, 183);
-            CustIdErrMsg.Margin = new Padding(2, 0, 2, 0);
-            CustIdErrMsg.Name = "CustIdErrMsg";
-            CustIdErrMsg.Size = new Size(38, 15);
-            CustIdErrMsg.TabIndex = 24;
-            CustIdErrMsg.Text = "label7";
-            // 
-            // DescErrMsg
-            // 
-            DescErrMsg.AutoSize = true;
-            DescErrMsg.ForeColor = SystemColors.ControlText;
-            DescErrMsg.Location = new Point(214, 142);
-            DescErrMsg.Margin = new Padding(2, 0, 2, 0);
-            DescErrMsg.Name = "DescErrMsg";
-            DescErrMsg.Size = new Size(38, 15);
-            DescErrMsg.TabIndex = 22;
-            DescErrMsg.Text = "label6";
-            // 
-            // TitleErrMsg
-            // 
-            TitleErrMsg.AutoSize = true;
-            TitleErrMsg.ForeColor = SystemColors.ControlText;
-            TitleErrMsg.Location = new Point(214, 102);
-            TitleErrMsg.Margin = new Padding(2, 0, 2, 0);
-            TitleErrMsg.Name = "TitleErrMsg";
-            TitleErrMsg.Size = new Size(38, 15);
-            TitleErrMsg.TabIndex = 20;
-            TitleErrMsg.Text = "label5";
-            // 
-            // cancelBtn
-            // 
-            cancelBtn.BackColor = SystemColors.ButtonHighlight;
-            cancelBtn.Location = new Point(312, 231);
-            cancelBtn.Margin = new Padding(2);
-            cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(104, 32);
-            cancelBtn.TabIndex = 18;
-            cancelBtn.Text = "Cancel";
-            cancelBtn.UseVisualStyleBackColor = false;
-            cancelBtn.Click += cancelBtn_Click;
-            // 
-            // addBtn
-            // 
-            addBtn.BackColor = SystemColors.Window;
-            addBtn.Location = new Point(188, 231);
-            addBtn.Margin = new Padding(2);
-            addBtn.Name = "addBtn";
-            addBtn.Size = new Size(104, 32);
-            addBtn.TabIndex = 17;
-            addBtn.Text = "Add";
-            addBtn.UseVisualStyleBackColor = false;
-            addBtn.Click += addBtn_Click;
-            // 
-            // custIdTxt
-            // 
-            custIdTxt.Font = new Font("Segoe UI", 10F);
-            custIdTxt.Location = new Point(211, 157);
-            custIdTxt.Margin = new Padding(2);
-            custIdTxt.Name = "custIdTxt";
-            custIdTxt.Size = new Size(237, 25);
-            custIdTxt.TabIndex = 16;
-            custIdTxt.TextChanged += custIdTxt_TextChanged;
-            // 
-            // custIdLbl
-            // 
-            custIdLbl.AutoSize = true;
-            custIdLbl.Font = new Font("Segoe UI", 10F);
-            custIdLbl.Location = new Point(104, 160);
-            custIdLbl.Margin = new Padding(2, 0, 2, 0);
-            custIdLbl.Name = "custIdLbl";
-            custIdLbl.Size = new Size(85, 19);
-            custIdLbl.TabIndex = 23;
-            custIdLbl.Text = "Customer Id";
-            // 
-            // descTxt
-            // 
-            descTxt.Font = new Font("Segoe UI", 10F);
-            descTxt.Location = new Point(211, 116);
-            descTxt.Margin = new Padding(2);
-            descTxt.Name = "descTxt";
-            descTxt.Size = new Size(237, 25);
-            descTxt.TabIndex = 15;
-            descTxt.TextChanged += descTxt_TextChanged;
-            // 
-            // descLbl
-            // 
-            descLbl.AutoSize = true;
-            descLbl.Font = new Font("Segoe UI", 10F);
-            descLbl.Location = new Point(104, 118);
-            descLbl.Margin = new Padding(2, 0, 2, 0);
-            descLbl.Name = "descLbl";
-            descLbl.Size = new Size(78, 19);
-            descLbl.TabIndex = 21;
-            descLbl.Text = "Description";
-            // 
-            // titleTxt
-            // 
-            titleTxt.Font = new Font("Segoe UI", 10F);
-            titleTxt.Location = new Point(211, 76);
-            titleTxt.Margin = new Padding(2);
-            titleTxt.Name = "titleTxt";
-            titleTxt.Size = new Size(237, 25);
-            titleTxt.TabIndex = 14;
-            titleTxt.TextChanged += titleTxt_TextChanged;
-            // 
-            // titleLbl
-            // 
-            titleLbl.AutoSize = true;
-            titleLbl.Font = new Font("Segoe UI", 10F);
-            titleLbl.Location = new Point(104, 78);
-            titleLbl.Margin = new Padding(2, 0, 2, 0);
-            titleLbl.Name = "titleLbl";
-            titleLbl.Size = new Size(34, 19);
-            titleLbl.TabIndex = 19;
-            titleLbl.Text = "Title";
-            // 
-            // addHeaderLbl
-            // 
-            addHeaderLbl.AutoSize = true;
-            addHeaderLbl.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            addHeaderLbl.Location = new Point(248, 39);
-            addHeaderLbl.Margin = new Padding(2, 0, 2, 0);
-            addHeaderLbl.Name = "addHeaderLbl";
-            addHeaderLbl.Size = new Size(127, 25);
-            addHeaderLbl.TabIndex = 13;
-            addHeaderLbl.Text = "Add Incident";
-            // 
-            // inciedentList
-            // 
-            inciedentList.Controls.Add(incidentDatagrid);
-            inciedentList.Location = new Point(4, 24);
-            inciedentList.Margin = new Padding(3, 2, 3, 2);
-            inciedentList.Name = "inciedentList";
-            inciedentList.Padding = new Padding(3, 2, 3, 2);
-            inciedentList.Size = new Size(924, 340);
-            inciedentList.TabIndex = 2;
-            inciedentList.Text = "Incident List";
-            inciedentList.UseVisualStyleBackColor = true;
-            // 
-            // incidentDatagrid
-            // 
-            incidentDatagrid.BackgroundColor = SystemColors.Window;
-            incidentDatagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            incidentDatagrid.Location = new Point(130, 21);
-            incidentDatagrid.Margin = new Padding(2);
-            incidentDatagrid.Name = "incidentDatagrid";
-            incidentDatagrid.RowHeadersWidth = 62;
-            incidentDatagrid.Size = new Size(424, 251);
-            incidentDatagrid.TabIndex = 6;
-            // 
-            // searchIncident
-            // 
-            searchIncident.Controls.Add(searchDataGrid);
-            searchIncident.Controls.Add(customerIdTxt);
-            searchIncident.Controls.Add(label1);
-            searchIncident.Controls.Add(searchBtn);
-            searchIncident.Location = new Point(4, 24);
-            searchIncident.Margin = new Padding(3, 2, 3, 2);
-            searchIncident.Name = "searchIncident";
-            searchIncident.Padding = new Padding(3, 2, 3, 2);
-            searchIncident.Size = new Size(924, 340);
-            searchIncident.TabIndex = 1;
-            searchIncident.Text = "Search Incident";
-            searchIncident.UseVisualStyleBackColor = true;
-            // 
-            // searchDataGrid
-            // 
-            searchDataGrid.BackgroundColor = SystemColors.Window;
-            searchDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            searchDataGrid.Location = new Point(153, 135);
-            searchDataGrid.Margin = new Padding(2);
-            searchDataGrid.Name = "searchDataGrid";
-            searchDataGrid.RowHeadersWidth = 62;
-            searchDataGrid.Size = new Size(398, 118);
-            searchDataGrid.TabIndex = 10;
-            // 
-            // customerIdTxt
-            // 
-            customerIdTxt.Location = new Point(284, 39);
-            customerIdTxt.Margin = new Padding(2);
-            customerIdTxt.Name = "customerIdTxt";
-            customerIdTxt.Size = new Size(252, 23);
-            customerIdTxt.TabIndex = 7;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F);
-            label1.Location = new Point(134, 42);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(72, 15);
-            label1.TabIndex = 9;
-            label1.Text = "Customer Id";
-            // 
-            // searchBtn
-            // 
-            searchBtn.BackColor = SystemColors.ButtonHighlight;
-            searchBtn.Location = new Point(301, 74);
-            searchBtn.Margin = new Padding(2);
-            searchBtn.Name = "searchBtn";
-            searchBtn.Size = new Size(108, 26);
-            searchBtn.TabIndex = 8;
-            searchBtn.Text = "Search";
-            searchBtn.UseVisualStyleBackColor = false;
-            searchBtn.Click += searchBtn_Click;
+            tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
             // 
             // openIncident
             // 
             openIncident.Controls.Add(openIncidentuc1);
-            openIncident.Location = new Point(4, 24);
+            openIncident.Location = new Point(4, 29);
+            openIncident.Margin = new Padding(3, 4, 3, 4);
             openIncident.Name = "openIncident";
-            openIncident.Padding = new Padding(3);
-            openIncident.Size = new Size(924, 340);
+            openIncident.Padding = new Padding(3, 4, 3, 4);
+            openIncident.Size = new Size(1057, 672);
             openIncident.TabIndex = 3;
             openIncident.Text = "Display Open Incident";
             openIncident.UseVisualStyleBackColor = true;
-            openIncident.Click += openIncident_Click;
             // 
             // openIncidentuc1
             // 
-            openIncidentuc1.Location = new Point(3, 5);
-            openIncidentuc1.Margin = new Padding(3, 2, 3, 2);
+            openIncidentuc1.Location = new Point(3, 7);
             openIncidentuc1.Name = "openIncidentuc1";
-            openIncidentuc1.Size = new Size(928, 332);
+            openIncidentuc1.Size = new Size(1061, 443);
             openIncidentuc1.TabIndex = 0;
             // 
             // tabAdd
             // 
-            tabAdd.Location = new Point(4, 24);
+            tabAdd.Controls.Add(IncidentForm);
+            tabAdd.Location = new Point(4, 29);
+            tabAdd.Margin = new Padding(3, 4, 3, 4);
             tabAdd.Name = "tabAdd";
-            tabAdd.Padding = new Padding(3);
-            tabAdd.Size = new Size(924, 340);
+            tabAdd.Padding = new Padding(3, 4, 3, 4);
+            tabAdd.Size = new Size(1057, 672);
             tabAdd.TabIndex = 4;
             tabAdd.Text = "Add";
             tabAdd.UseVisualStyleBackColor = true;
             // 
+            // IncidentForm
+            // 
+            IncidentForm.Location = new Point(3, 7);
+            IncidentForm.Name = "IncidentForm";
+            IncidentForm.Size = new Size(1050, 641);
+            IncidentForm.TabIndex = 0;
+            // 
+            // updateIncident
+            // 
+            updateIncident.Controls.Add(updateIncidentuc1);
+            updateIncident.Location = new Point(4, 29);
+            updateIncident.Name = "updateIncident";
+            updateIncident.Padding = new Padding(3);
+            updateIncident.Size = new Size(1057, 672);
+            updateIncident.TabIndex = 1;
+            updateIncident.Text = "Update";
+            updateIncident.UseVisualStyleBackColor = true;
+            // 
+            // updateIncidentuc1
+            // 
+            updateIncidentuc1.BackColor = Color.Gray;
+            updateIncidentuc1.Location = new Point(6, 3);
+            updateIncidentuc1.Name = "updateIncidentuc1";
+            updateIncidentuc1.Size = new Size(790, 644);
+            updateIncidentuc1.TabIndex = 0;
+            // 
             // userNameLbl
             // 
             userNameLbl.AutoSize = true;
-            userNameLbl.Location = new Point(832, 19);
+            userNameLbl.Location = new Point(951, 25);
             userNameLbl.Margin = new Padding(2, 0, 2, 0);
             userNameLbl.Name = "userNameLbl";
-            userNameLbl.Size = new Size(62, 15);
+            userNameLbl.Size = new Size(78, 20);
             userNameLbl.TabIndex = 7;
             userNameLbl.Text = "UserName";
             // 
@@ -366,23 +126,24 @@
             // 
             logoutLink.AutoSize = true;
             logoutLink.Cursor = Cursors.Hand;
-            logoutLink.Location = new Point(920, 19);
+            logoutLink.Location = new Point(1051, 25);
             logoutLink.Margin = new Padding(2, 0, 2, 0);
             logoutLink.Name = "logoutLink";
-            logoutLink.Size = new Size(45, 15);
+            logoutLink.Size = new Size(56, 20);
             logoutLink.TabIndex = 8;
             logoutLink.TabStop = true;
             logoutLink.Text = "Logout";
-            logoutLink.LinkClicked += logoutLink_LinkClicked;
+            logoutLink.LinkClicked += LogoutLink_LinkClicked;
             // 
             // TabbedMainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1036, 485);
+            ClientSize = new Size(1184, 780);
             Controls.Add(userNameLbl);
             Controls.Add(logoutLink);
             Controls.Add(tabControl);
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "TabbedMainForm";
@@ -390,14 +151,9 @@
             Text = "Dashboard";
             Load += TabbedMainForm_Load;
             tabControl.ResumeLayout(false);
-            addIncident.ResumeLayout(false);
-            addIncident.PerformLayout();
-            inciedentList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)incidentDatagrid).EndInit();
-            searchIncident.ResumeLayout(false);
-            searchIncident.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)searchDataGrid).EndInit();
             openIncident.ResumeLayout(false);
+            tabAdd.ResumeLayout(false);
+            updateIncident.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -405,31 +161,13 @@
         #endregion
 
         private TabControl tabControl;
-        private TabPage addIncident;
-        private Label messageLabel;
-        private Label CustIdErrMsg;
-        private Label DescErrMsg;
-        private Label TitleErrMsg;
-        private Button cancelBtn;
-        private Button addBtn;
-        private TextBox custIdTxt;
-        private Label custIdLbl;
-        private TextBox descTxt;
-        private Label descLbl;
-        private TextBox titleTxt;
-        private Label titleLbl;
-        private Label addHeaderLbl;
-        private TabPage inciedentList;
-        private DataGridView incidentDatagrid;
-        private TabPage searchIncident;
-        private DataGridView searchDataGrid;
-        private TextBox customerIdTxt;
-        private Label label1;
-        private Button searchBtn;
+        private TabPage updateIncident;
         private Label userNameLbl;
         private LinkLabel logoutLink;
         private TabPage openIncident;
         private OpenIncidentUC openIncidentuc1;
         private TabPage tabAdd;
+        private UpdateIncidentUC updateIncidentuc1;
+        private IncidentForm IncidentForm;
     }
 }
