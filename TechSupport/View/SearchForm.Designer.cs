@@ -48,7 +48,7 @@ namespace TechSupport.View
             searchBtn.TabIndex = 4;
             searchBtn.Text = "Search";
             searchBtn.UseVisualStyleBackColor = false;
-            searchBtn.Click += searchBtn_Click;
+            searchBtn.Click += SearchBtn_Click;
 
             // 
             // custIdLbl

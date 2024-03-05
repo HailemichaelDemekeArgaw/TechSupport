@@ -39,7 +39,7 @@
             incidentlistView.Size = new Size(900, 320);
             incidentlistView.TabIndex = 0;
             incidentlistView.UseCompatibleStateImageBehavior = false;
-            incidentlistView.SelectedIndexChanged += incidentlistView_SelectedIndexChanged;
+            incidentlistView.SelectedIndexChanged += IncidentlistView_SelectedIndexChanged;
             // 
             // OpenIncidentUC
             // 

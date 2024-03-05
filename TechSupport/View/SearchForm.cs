@@ -23,7 +23,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see instance containing the event data.</param>
-        private void searchBtn_Click(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
             var customerId = !string.IsNullOrEmpty(custIdTxt.Text.ToString()) ? Convert.ToInt32(custIdTxt.Text) : 0;
             var incidents = _incidentController.GetIncidentList(customerId);
