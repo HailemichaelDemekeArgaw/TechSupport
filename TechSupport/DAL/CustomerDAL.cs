@@ -16,7 +16,7 @@ namespace TechSupport.DAL
         public List<Customers> GetCustomers()
         {
             List<Customers> customerList = new List<Customers>();
-            string sqlStatement = "select * from Customers";
+            string sqlStatement = "select CustomerID,Name from Customers";
             using (SqlConnection connection = DBAccess.GetSqlConnection())
             {
                 connection.Open();
@@ -31,11 +31,11 @@ namespace TechSupport.DAL
 
                             customer.CustomerId = (int)reader["CustomerID"];
                             customer.Name = (string)reader["Name"];
-                            customer.Address = (string)reader["address"];
-                            customer.City = (string)reader["City"];
-                            customer.ZipCode = (string)reader["ZipCode"];
-                            customer.Phone = (string)reader["Phone"];
-                            customer.Email = (string)reader["email"];
+                            //customer.Address = (string)reader["address"];
+                            //customer.City = (string)reader["City"];
+                            //customer.ZipCode = (string)reader["ZipCode"];
+                            //customer.Phone = (string)reader["Phone"];
+                            //customer.Email = (string)reader["email"];
                             customerList.Add(customer);
 
 

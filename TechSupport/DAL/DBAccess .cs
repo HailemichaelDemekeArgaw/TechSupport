@@ -15,7 +15,8 @@ namespace TechSupport.DAL
         /// <returns>return Database SQL connection</returns>
         public static SqlConnection GetSqlConnection()
         {
-            var conStr = "Data Source=localhost; Initial Catalog=TechSupport; Integrated Security=true";
+           var conStr = "Data Source=localhost; Initial Catalog=TechSupport; Integrated Security=true";
+
             return new SqlConnection(conStr);
         }
 
