@@ -8,7 +8,7 @@ namespace TechSupport.View
     /// Class representing the incident form.
     /// </summary>
     /// <seealso cref="System.Windows.Forms.Form" />
-    public partial class IncidentForm : Form
+    public partial class IncidentForm : UserControl
     {
         private readonly IncidentController _incidentController;
         private readonly IncidentService _incidentService;
@@ -35,7 +35,7 @@ namespace TechSupport.View
         /// <summary>
         /// Products this instance.
         /// </summary>
-        public void Product()
+        public void PopulateProductCombobox()
         {
             List<Products> productList;
             try
@@ -58,7 +58,7 @@ namespace TechSupport.View
         /// <summary>
         /// Customers this instance.
         /// </summary>
-        public void Customer()
+        public void PopulateCustomerCombobox()
         {
             List<Customers> customerList;
             try
@@ -86,8 +86,8 @@ namespace TechSupport.View
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void AddNewIncident_Load(object sender, EventArgs e)
         {
-            Customer();
-            Product();
+            PopulateCustomerCombobox();
+            PopulateProductCombobox();
         }
 
         /// <summary>
@@ -95,8 +95,10 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+
         private void CreateIncidentBtn_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(cmbCustomer.Text))
             {
 
@@ -137,9 +139,21 @@ namespace TechSupport.View
             incident.ProductCode = Convert.ToString(cmbProduct.SelectedValue);
             incident.Title = txtTitle.Text;
             incident.Description = txtDescription.Text;
-            lblMessage.Text = _incidentController.AddIncidentToDatabase(incident);
-            lblMessage.ForeColor = Color.Green;
+
+            if (!_incidentController.CheckRegistratioAssociation(incident.CustomerId,incident.ProductCode))
+            {
+
+                lblMessage.Text = "Incident registration is not associated with the customer for the product";
+                lblMessage.ForeColor =  Color.Red;
+                lblMessage.Show();
+                return;
+            }
+            var addIncident = _incidentController.AddIncidentToDatabase(incident);
+
+            lblMessage.Text = addIncident.Message;
+            lblMessage.ForeColor = addIncident.Success ? Color.Green : Color.Red;
             lblMessage.Show();
+
         }
 
         /// <summary>
@@ -149,8 +163,8 @@ namespace TechSupport.View
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void ClearIncidentBtn_Click(object sender, EventArgs e)
         {
-            Customer();
-            Product();
+            PopulateCustomerCombobox();
+            PopulateProductCombobox();
             txtTitle.Text = "";
             txtDescription.Text = "";
             lblTitle.Hide();
@@ -163,7 +177,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        private void txtTitle_TextChanged(object sender, EventArgs e)
+        private void TxtTitle_TextChanged(object sender, EventArgs e)
         {
             lblTitle.Hide();
         }
@@ -174,9 +188,11 @@ namespace TechSupport.View
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         /// <returns></returns>
-        private void txtDescription_TextChanged(object sender, EventArgs e)
+        private void TxtDescription_TextChanged(object sender, EventArgs e)
         {
             lblDescription.Hide();
         }
+
+
     }
 }
