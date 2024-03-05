@@ -46,7 +46,7 @@
             logoutLink.TabIndex = 4;
             logoutLink.TabStop = true;
             logoutLink.Text = "Logout";
-            logoutLink.LinkClicked += logoutLink_LinkClicked;
+            logoutLink.LinkClicked += LogoutLink_LinkClicked;
 
             // 
             // userNameLbl
@@ -82,7 +82,7 @@
             addBtn.TabIndex = 0;
             addBtn.Text = "Add Incident";
             addBtn.UseVisualStyleBackColor = false;
-            addBtn.Click += addBtn_Click;
+            addBtn.Click += AddBtn_Click;
 
             // 
             // searchBtn
@@ -95,7 +95,7 @@
             searchBtn.TabIndex = 1;
             searchBtn.Text = "Search Incident";
             searchBtn.UseVisualStyleBackColor = false;
-            searchBtn.Click += searchBtn_Click;
+            searchBtn.Click += SearchBtn_Click;
 
             // 
             // MainForm

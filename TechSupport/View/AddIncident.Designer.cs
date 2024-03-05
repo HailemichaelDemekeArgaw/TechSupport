@@ -73,8 +73,8 @@ namespace TechSupport.View
             titleTxt.Name = "titleTxt";
             titleTxt.Size = new Size(237, 25);
             titleTxt.TabIndex = 1;
-            titleTxt.TextChanged += titleTxt_TextChanged;
-            titleTxt.KeyDown += titleTxt_KeyDown;
+            titleTxt.TextChanged += TitleTxt_TextChanged;
+            titleTxt.KeyDown += TitleTxt_KeyDown;
             // 
             // descLbl
             // 
@@ -95,7 +95,7 @@ namespace TechSupport.View
             descTxt.Name = "descTxt";
             descTxt.Size = new Size(237, 25);
             descTxt.TabIndex = 2;
-            descTxt.KeyDown += descTxt_KeyDown;
+            descTxt.KeyDown += DescTxt_KeyDown;
             // 
             // custIdLbl
             // 
@@ -116,7 +116,7 @@ namespace TechSupport.View
             custIdTxt.Name = "custIdTxt";
             custIdTxt.Size = new Size(237, 25);
             custIdTxt.TabIndex = 3;
-            custIdTxt.KeyDown += custIdTxt_KeyDown;
+            custIdTxt.KeyDown += CustIdTxt_KeyDown;
             // 
             // addBtn
             // 
@@ -128,7 +128,7 @@ namespace TechSupport.View
             addBtn.TabIndex = 4;
             addBtn.Text = "Add";
             addBtn.UseVisualStyleBackColor = false;
-            addBtn.Click += addBtn_Click;
+            addBtn.Click += AddBtn_Click;
             // 
             // cancelBtn
             // 
@@ -140,7 +140,7 @@ namespace TechSupport.View
             cancelBtn.TabIndex = 5;
             cancelBtn.Text = "Cancel";
             cancelBtn.UseVisualStyleBackColor = false;
-            cancelBtn.Click += cancelBtn_Click;
+            cancelBtn.Click += CancelBtn_Click;
             // 
             // TitleErrMsg
             // 

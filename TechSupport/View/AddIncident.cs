@@ -30,7 +30,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
-        private void addBtn_Click(object sender, EventArgs e)
+        private void AddBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
-        private void cancelBtn_Click(object sender, EventArgs e)
+        private void CancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -104,7 +104,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
-        private void descTxt_KeyDown(object sender, KeyEventArgs e)
+        private void DescTxt_KeyDown(object sender, KeyEventArgs e)
         {
             DescErrMsg.Hide();
         }
@@ -114,7 +114,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
-        private void titleTxt_KeyDown(object sender, KeyEventArgs e)
+        private void TitleTxt_KeyDown(object sender, KeyEventArgs e)
         {
             TitleErrMsg.Hide();
         }
@@ -124,12 +124,12 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
-        private void custIdTxt_KeyDown(object sender, KeyEventArgs e)
+        private void CustIdTxt_KeyDown(object sender, KeyEventArgs e)
         {
             CustIdErrMsg.Hide();
         }
 
-        private void titleTxt_TextChanged(object sender, EventArgs e)
+        private void TitleTxt_TextChanged(object sender, EventArgs e)
         {
 
         }

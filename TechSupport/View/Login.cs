@@ -16,7 +16,7 @@ namespace TechSupport.View
             InitializeComponent();
         }
 
-        private void submitBtn_Click(object sender, EventArgs e)
+        private void SubmitBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
-        private void userNameTxt_KeyDown(object sender, KeyEventArgs e)
+        private void UserNameTxt_KeyDown(object sender, KeyEventArgs e)
         {
             errorLabel.Hide();
         }
@@ -89,7 +89,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
-        private void passwordTxt_KeyDown(object sender, KeyEventArgs e)
+        private void PasswordTxt_KeyDown(object sender, KeyEventArgs e)
         {
             errorLabel.Hide();
         }

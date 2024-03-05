@@ -69,7 +69,7 @@
             userNameTxt.Name = "userNameTxt";
             userNameTxt.Size = new Size(233, 34);
             userNameTxt.TabIndex = 1;
-            userNameTxt.KeyDown += userNameTxt_KeyDown;
+            userNameTxt.KeyDown += UserNameTxt_KeyDown;
 
             // 
             // passwordTxt
@@ -81,7 +81,7 @@
             passwordTxt.PasswordChar = '*';
             passwordTxt.Size = new Size(233, 34);
             passwordTxt.TabIndex = 2;
-            passwordTxt.KeyDown += passwordTxt_KeyDown;
+            passwordTxt.KeyDown += PasswordTxt_KeyDown;
 
             // 
             // headerLbl
@@ -107,7 +107,7 @@
             submitBtn.TabIndex = 3;
             submitBtn.Text = "Login";
             submitBtn.UseVisualStyleBackColor = false;
-            submitBtn.Click += submitBtn_Click;
+            submitBtn.Click += SubmitBtn_Click;
 
             // 
             // errorLabel

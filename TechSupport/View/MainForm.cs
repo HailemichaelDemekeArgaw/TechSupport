@@ -26,7 +26,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
-        private void addBtn_Click(object sender, EventArgs e)
+        private void AddBtn_Click(object sender, EventArgs e)
         {
             AddIncident addIncident = new AddIncident();
             addIncident.ShowDialog();
@@ -56,7 +56,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
-        private void searchBtn_Click(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
             SearchForm searchForm = new SearchForm();
             searchForm.ShowDialog();
@@ -67,7 +67,7 @@ namespace TechSupport.View
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The instance containing the event data.</param>
-        private void logoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Login login = new Login();
             login.Show();
