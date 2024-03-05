@@ -31,11 +31,6 @@ namespace TechSupport.DAL
 
                             customer.CustomerId = (int)reader["CustomerID"];
                             customer.Name = (string)reader["Name"];
-                            //customer.Address = (string)reader["address"];
-                            //customer.City = (string)reader["City"];
-                            //customer.ZipCode = (string)reader["ZipCode"];
-                            //customer.Phone = (string)reader["Phone"];
-                            //customer.Email = (string)reader["email"];
                             customerList.Add(customer);
 
 

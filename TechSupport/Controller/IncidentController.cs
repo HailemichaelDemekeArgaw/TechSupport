@@ -1,6 +1,4 @@
-﻿using System.Data.SqlClient;
-using System.Windows.Forms;
-using TechSupport.DAL;
+﻿using TechSupport.DAL;
 using TechSupport.Model;
 using TechSupport.View;
 

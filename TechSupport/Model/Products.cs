@@ -10,10 +10,6 @@ namespace TechSupport.Model
         [Key]
         public string ProductCode { get; set; }
         public string Name { get; set; }
-        //public decimal Version { get; set; }
-        //public DateTime ReleaseDate { get; set; }
-
-
-
+       
     }
 }

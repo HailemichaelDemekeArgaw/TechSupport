@@ -3,6 +3,10 @@ using TechSupport.Model;
 
 namespace TechSupport.View
 {
+    /// <summary>
+    /// Class representing the Update Incidnet UI.
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UpdateIncidentUC : UserControl
     {
         private readonly IncidentController _incidentController;
@@ -20,6 +24,10 @@ namespace TechSupport.View
             lblMessage.Visible = false;
             this.BackColor = Color.LightGray;
         }
+
+        /// <summary>
+        /// Technicians this instance.
+        /// </summary>
         public void Technician()
         {
             List<Technicians> technicianList;
@@ -44,6 +52,10 @@ namespace TechSupport.View
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
+
+        /// <summary>
+        /// Clears the fields.
+        /// </summary>
         public void ClearFields()
         {
             txtCustomer.Text = "";
@@ -62,6 +74,11 @@ namespace TechSupport.View
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the BtnGet control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void BtnGet_Click(object sender, EventArgs e)
         {
             ClearFields();
@@ -102,6 +119,11 @@ namespace TechSupport.View
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the BtnUpdate control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             //check incident is closed
@@ -168,6 +190,11 @@ namespace TechSupport.View
             txtTextAddOn.Text = "";
         }
 
+        /// <summary>
+        /// Handles the Click event of the BtnClose control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void BtnClose_Click(object sender, EventArgs e)
         {
             if (cmbTechnician.Text == "-- Unassigned --" || cmbTechnician.SelectedValue == null)
@@ -214,11 +241,21 @@ namespace TechSupport.View
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the BtnClear control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void BtnClear_Click(object sender, EventArgs e)
         {
             ClearFields();
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the TxtIncidentId control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void TxtIncidentId_TextChanged(object sender, EventArgs e)
         {
             try
@@ -231,6 +268,11 @@ namespace TechSupport.View
             }
         }
 
+        /// <summary>
+        /// Handles the Load event of the UpdateIncidentUC control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void UpdateIncidentUC_Load(object sender, EventArgs e)
         {
             Technician();

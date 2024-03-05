@@ -8,6 +8,10 @@ namespace TechSupport.DAL
     /// </summary>
     public class TechniciansDAL
     {
+        /// <summary>
+        /// Gets the technicians.
+        /// </summary>
+        /// <returns></returns>
         public List<Technicians> GetTechnicians()
         {
             List<Technicians> technicianList = new List<Technicians>();

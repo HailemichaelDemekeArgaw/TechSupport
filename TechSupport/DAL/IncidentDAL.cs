@@ -1,5 +1,4 @@
-﻿using System.Data;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -225,7 +224,6 @@ namespace TechSupport.DAL
         /// </summary>
         /// <param name="incident">Customer ID</param>
         /// <returns>return confirmation or error message</returns>
-
         public string UpdateIncidents(Incidents incident)
         {
             try

@@ -8,6 +8,9 @@ using TechSupport.Model;
 
 namespace TechSupport.Controller
 {
+    /// <summary>
+    /// Controller class for the Technicians
+    /// </summary>
     public class TechniciansController
     {
         private readonly TechniciansDAL _techniciansDAL;
@@ -16,6 +19,10 @@ namespace TechSupport.Controller
             this._techniciansDAL = new TechniciansDAL();
         }
 
+        /// <summary>
+        /// Gets the technicians.
+        /// </summary>
+        /// <returns></returns>
         public List<Technicians> GetTechnicians()
         {
             return this._techniciansDAL.GetTechnicians();
