@@ -33,37 +33,38 @@
             BtnClose = new Button();
             BtnUpdate = new Button();
             txtTextAddOn = new TextBox();
-            label8 = new Label();
+            lblTextAddOn = new Label();
             txtDescription = new TextBox();
-            label7 = new Label();
+            lblDescription = new Label();
             txtDateOpen = new TextBox();
-            label6 = new Label();
+            lblDate = new Label();
             txtTitle = new TextBox();
-            label5 = new Label();
+            lblTitle = new Label();
             cmbTechnician = new ComboBox();
-            label4 = new Label();
+            lblTechncian = new Label();
             txtProduct = new TextBox();
-            label3 = new Label();
+            lblProduct = new Label();
             txtCustomer = new TextBox();
-            label2 = new Label();
+            lblCusotmer = new Label();
             BtnGet = new Button();
             txtIncidentId = new TextBox();
-            label1 = new Label();
+            lblIncidentId = new Label();
             SuspendLayout();
             // 
             // lblMessage
             // 
             lblMessage.AutoSize = true;
-            lblMessage.Location = new Point(171, 536);
+            lblMessage.Location = new Point(150, 402);
             lblMessage.Name = "lblMessage";
-            lblMessage.Size = new Size(0, 20);
+            lblMessage.Size = new Size(0, 15);
             lblMessage.TabIndex = 48;
             // 
             // BtnClear
             // 
-            BtnClear.Location = new Point(492, 551);
+            BtnClear.Location = new Point(430, 413);
+            BtnClear.Margin = new Padding(3, 2, 3, 2);
             BtnClear.Name = "BtnClear";
-            BtnClear.Size = new Size(133, 34);
+            BtnClear.Size = new Size(116, 26);
             BtnClear.TabIndex = 47;
             BtnClear.Text = "Clear";
             BtnClear.UseVisualStyleBackColor = true;
@@ -72,9 +73,10 @@
             // BtnClose
             // 
             BtnClose.Enabled = false;
-            BtnClose.Location = new Point(328, 551);
+            BtnClose.Location = new Point(287, 413);
+            BtnClose.Margin = new Padding(3, 2, 3, 2);
             BtnClose.Name = "BtnClose";
-            BtnClose.Size = new Size(133, 34);
+            BtnClose.Size = new Size(116, 26);
             BtnClose.TabIndex = 46;
             BtnClose.Text = "Close";
             BtnClose.UseVisualStyleBackColor = true;
@@ -83,9 +85,10 @@
             // BtnUpdate
             // 
             BtnUpdate.Enabled = false;
-            BtnUpdate.Location = new Point(164, 551);
+            BtnUpdate.Location = new Point(144, 413);
+            BtnUpdate.Margin = new Padding(3, 2, 3, 2);
             BtnUpdate.Name = "BtnUpdate";
-            BtnUpdate.Size = new Size(133, 34);
+            BtnUpdate.Size = new Size(116, 26);
             BtnUpdate.TabIndex = 45;
             BtnUpdate.Text = "Update";
             BtnUpdate.UseVisualStyleBackColor = true;
@@ -93,130 +96,138 @@
             // 
             // txtTextAddOn
             // 
-            txtTextAddOn.Location = new Point(162, 418);
+            txtTextAddOn.Location = new Point(142, 314);
+            txtTextAddOn.Margin = new Padding(3, 2, 3, 2);
             txtTextAddOn.Multiline = true;
             txtTextAddOn.Name = "txtTextAddOn";
             txtTextAddOn.ReadOnly = true;
-            txtTextAddOn.Size = new Size(515, 91);
+            txtTextAddOn.Size = new Size(451, 69);
             txtTextAddOn.TabIndex = 44;
             // 
-            // label8
+            // lblTextAddOn
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(51, 418);
-            label8.Name = "label8";
-            label8.Size = new Size(92, 20);
-            label8.TabIndex = 43;
-            label8.Text = "Text Add on:";
+            lblTextAddOn.AutoSize = true;
+            lblTextAddOn.Location = new Point(45, 314);
+            lblTextAddOn.Name = "lblTextAddOn";
+            lblTextAddOn.Size = new Size(73, 15);
+            lblTextAddOn.TabIndex = 43;
+            lblTextAddOn.Text = "Text Add on:";
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(162, 322);
+            txtDescription.Location = new Point(142, 242);
+            txtDescription.Margin = new Padding(3, 2, 3, 2);
             txtDescription.Multiline = true;
             txtDescription.Name = "txtDescription";
             txtDescription.ReadOnly = true;
-            txtDescription.Size = new Size(515, 75);
+            txtDescription.Size = new Size(451, 57);
             txtDescription.TabIndex = 42;
             // 
-            // label7
+            // lblDescription
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(51, 322);
-            label7.Name = "label7";
-            label7.Size = new Size(88, 20);
-            label7.TabIndex = 41;
-            label7.Text = "Description:";
+            lblDescription.AutoSize = true;
+            lblDescription.Location = new Point(45, 242);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(70, 15);
+            lblDescription.TabIndex = 41;
+            lblDescription.Text = "Description:";
             // 
             // txtDateOpen
             // 
-            txtDateOpen.Location = new Point(162, 274);
+            txtDateOpen.Location = new Point(142, 206);
+            txtDateOpen.Margin = new Padding(3, 2, 3, 2);
             txtDateOpen.Name = "txtDateOpen";
             txtDateOpen.ReadOnly = true;
-            txtDateOpen.Size = new Size(515, 27);
+            txtDateOpen.Size = new Size(451, 23);
             txtDateOpen.TabIndex = 40;
             // 
-            // label6
+            // lblDate
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(51, 273);
-            label6.Name = "label6";
-            label6.Size = new Size(84, 20);
-            label6.TabIndex = 39;
-            label6.Text = "Date Open:";
+            lblDate.AutoSize = true;
+            lblDate.Location = new Point(45, 205);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(66, 15);
+            lblDate.TabIndex = 39;
+            lblDate.Text = "Date Open:";
             // 
             // txtTitle
             // 
-            txtTitle.Location = new Point(162, 226);
+            txtTitle.Location = new Point(142, 170);
+            txtTitle.Margin = new Padding(3, 2, 3, 2);
             txtTitle.Name = "txtTitle";
             txtTitle.ReadOnly = true;
-            txtTitle.Size = new Size(515, 27);
+            txtTitle.Size = new Size(451, 23);
             txtTitle.TabIndex = 38;
             // 
-            // label5
+            // lblTitle
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(51, 225);
-            label5.Name = "label5";
-            label5.Size = new Size(41, 20);
-            label5.TabIndex = 37;
-            label5.Text = "Title:";
+            lblTitle.AutoSize = true;
+            lblTitle.Location = new Point(45, 169);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(32, 15);
+            lblTitle.TabIndex = 37;
+            lblTitle.Text = "Title:";
             // 
             // cmbTechnician
             // 
             cmbTechnician.FormattingEnabled = true;
-            cmbTechnician.Location = new Point(162, 177);
+            cmbTechnician.Location = new Point(142, 133);
+            cmbTechnician.Margin = new Padding(3, 2, 3, 2);
             cmbTechnician.Name = "cmbTechnician";
-            cmbTechnician.Size = new Size(515, 28);
+            cmbTechnician.Size = new Size(451, 23);
             cmbTechnician.TabIndex = 36;
             // 
-            // label4
+            // lblTechncian
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(51, 177);
-            label4.Name = "label4";
-            label4.Size = new Size(77, 20);
-            label4.TabIndex = 35;
-            label4.Text = "Techncian:";
+            lblTechncian.AutoSize = true;
+            lblTechncian.Location = new Point(45, 133);
+            lblTechncian.Name = "lblTechncian";
+            lblTechncian.Size = new Size(63, 15);
+            lblTechncian.TabIndex = 35;
+            lblTechncian.Text = "Techncian:";
             // 
             // txtProduct
             // 
-            txtProduct.Location = new Point(162, 129);
+            txtProduct.Location = new Point(142, 97);
+            txtProduct.Margin = new Padding(3, 2, 3, 2);
             txtProduct.Name = "txtProduct";
             txtProduct.ReadOnly = true;
-            txtProduct.Size = new Size(515, 27);
+            txtProduct.Size = new Size(451, 23);
             txtProduct.TabIndex = 34;
             // 
-            // label3
+            // lblProduct
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(51, 129);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 20);
-            label3.TabIndex = 33;
-            label3.Text = "Prodct:";
+            lblProduct.AutoSize = true;
+            lblProduct.Location = new Point(45, 97);
+            lblProduct.Name = "lblProduct";
+            lblProduct.Size = new Size(45, 15);
+            lblProduct.TabIndex = 33;
+            lblProduct.Text = "Prodct:";
             // 
             // txtCustomer
             // 
-            txtCustomer.Location = new Point(162, 81);
+            txtCustomer.Location = new Point(142, 61);
+            txtCustomer.Margin = new Padding(3, 2, 3, 2);
             txtCustomer.Name = "txtCustomer";
             txtCustomer.ReadOnly = true;
-            txtCustomer.Size = new Size(515, 27);
+            txtCustomer.Size = new Size(451, 23);
             txtCustomer.TabIndex = 32;
             // 
-            // label2
+            // lblCusotmer
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(51, 81);
-            label2.Name = "label2";
-            label2.Size = new Size(75, 20);
-            label2.TabIndex = 31;
-            label2.Text = "Customer:";
+            lblCusotmer.AutoSize = true;
+            lblCusotmer.Location = new Point(45, 61);
+            lblCusotmer.Name = "lblCusotmer";
+            lblCusotmer.Size = new Size(62, 15);
+            lblCusotmer.TabIndex = 31;
+            lblCusotmer.Text = "Customer:";
             // 
             // BtnGet
             // 
-            BtnGet.Location = new Point(575, 31);
+            BtnGet.Location = new Point(503, 23);
+            BtnGet.Margin = new Padding(3, 2, 3, 2);
             BtnGet.Name = "BtnGet";
-            BtnGet.Size = new Size(76, 29);
+            BtnGet.Size = new Size(66, 22);
             BtnGet.TabIndex = 30;
             BtnGet.Text = "Get";
             BtnGet.UseVisualStyleBackColor = true;
@@ -224,48 +235,50 @@
             // 
             // txtIncidentId
             // 
-            txtIncidentId.Location = new Point(162, 33);
+            txtIncidentId.Location = new Point(142, 25);
+            txtIncidentId.Margin = new Padding(3, 2, 3, 2);
             txtIncidentId.Name = "txtIncidentId";
-            txtIncidentId.Size = new Size(373, 27);
+            txtIncidentId.Size = new Size(327, 23);
             txtIncidentId.TabIndex = 29;
             txtIncidentId.TextChanged += TxtIncidentId_TextChanged;
             // 
-            // label1
+            // lblIncidentId
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(51, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(84, 20);
-            label1.TabIndex = 28;
-            label1.Text = "Incident ID:";
+            lblIncidentId.AutoSize = true;
+            lblIncidentId.Location = new Point(45, 25);
+            lblIncidentId.Name = "lblIncidentId";
+            lblIncidentId.Size = new Size(67, 15);
+            lblIncidentId.TabIndex = 28;
+            lblIncidentId.Text = "Incident ID:";
             // 
             // UpdateIncidentUC
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lblMessage);
             Controls.Add(BtnClear);
             Controls.Add(BtnClose);
             Controls.Add(BtnUpdate);
             Controls.Add(txtTextAddOn);
-            Controls.Add(label8);
+            Controls.Add(lblTextAddOn);
             Controls.Add(txtDescription);
-            Controls.Add(label7);
+            Controls.Add(lblDescription);
             Controls.Add(txtDateOpen);
-            Controls.Add(label6);
+            Controls.Add(lblDate);
             Controls.Add(txtTitle);
-            Controls.Add(label5);
+            Controls.Add(lblTitle);
             Controls.Add(cmbTechnician);
-            Controls.Add(label4);
+            Controls.Add(lblTechncian);
             Controls.Add(txtProduct);
-            Controls.Add(label3);
+            Controls.Add(lblProduct);
             Controls.Add(txtCustomer);
-            Controls.Add(label2);
+            Controls.Add(lblCusotmer);
             Controls.Add(BtnGet);
             Controls.Add(txtIncidentId);
-            Controls.Add(label1);
+            Controls.Add(lblIncidentId);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UpdateIncidentUC";
-            Size = new Size(751, 604);
+            Size = new Size(657, 453);
             Load += UpdateIncidentUC_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -278,21 +291,21 @@
         private Button BtnClose;
         private Button BtnUpdate;
         private TextBox txtTextAddOn;
-        private Label label8;
+        private Label lblTextAddOn;
         private TextBox txtDescription;
-        private Label label7;
+        private Label lblDescription;
         private TextBox txtDateOpen;
-        private Label label6;
+        private Label lblDate;
         private TextBox txtTitle;
-        private Label label5;
+        private Label lblTitle;
         private ComboBox cmbTechnician;
-        private Label label4;
+        private Label lblTechncian;
         private TextBox txtProduct;
-        private Label label3;
+        private Label lblProduct;
         private TextBox txtCustomer;
-        private Label label2;
+        private Label lblCusotmer;
         private Button BtnGet;
         private TextBox txtIncidentId;
-        private Label label1;
+        private Label lblIncidentId;
     }
 }

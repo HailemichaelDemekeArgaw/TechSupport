@@ -50,7 +50,7 @@ namespace TechSupport.View
             txtProduct.Text = "";
 
             Technician();
-            txtIncidentId.Text = "";
+            //txtIncidentId.Text = "";
             txtDateOpen.Text = "";
             txtTitle.Text = "";
             txtDescription.Text = "";
@@ -64,6 +64,7 @@ namespace TechSupport.View
 
         private void BtnGet_Click(object sender, EventArgs e)
         {
+            ClearFields();
             if (txtIncidentId.Text.Trim().Length > 0)
             {
                 SearchIncidentVM searchIncident = _incidentController.SearchIncidentList(Convert.ToInt32(txtIncidentId.Text));

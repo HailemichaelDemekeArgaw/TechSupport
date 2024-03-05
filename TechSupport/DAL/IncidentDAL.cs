@@ -231,6 +231,12 @@ namespace TechSupport.DAL
             try
             {
                 string updateIncident = "update Incidents set  Description = @description, TechID = @techID where IncidentID = @incidentID";
+                if (incident.TechId == 0)
+                {
+                    updateIncident = "update Incidents set  Description = @description where IncidentID = @incidentID";
+                }
+
+                //string updateIncident = "update Incidents set  Description = @description, TechID = @techID where IncidentID = @incidentID";
 
                 string message = "";
 
