@@ -1,4 +1,6 @@
-﻿using TechSupport.DAL;
+﻿using System.Data.SqlClient;
+using System.Windows.Forms;
+using TechSupport.DAL;
 using TechSupport.Model;
 using TechSupport.View;
 
@@ -38,7 +40,7 @@ namespace TechSupport.Controller
         /// <exception> incident - Incident cannot be null</exception>
         public void AddIncident(Incident incident)
         {
-            if(incident == null)
+            if (incident == null)
             {
                 throw new ArgumentNullException(nameof(incident), "Incident cannot be null");
             }
@@ -52,11 +54,29 @@ namespace TechSupport.Controller
         /// </summary>
         /// <param name="incident">The incident.</param>
         /// <returns></returns>
-        public string AddIncidentToDatabase(Incidents incident)
+        public IncidentResponse AddIncidentToDatabase(Incidents incident)
         {
             return this._incidentDAL.AddIncident(incident);
         }
 
+
+
+
+        /// <summary>
+        /// Method to check registratio asociatated customer with product
+        /// </summary>
+        /// <param name="CustomerId">Customer ID</param>
+        /// /// <param name="ProductCode">Product Code</param>
+        /// <returns>return registration incident is associated  customer with product</returns>
+        public bool CheckRegistratioAssociation(int CustomerId, string ProductCode)
+        {
+            var data = _incidentDAL.GetCustomerAssociatedRegistration(CustomerId, ProductCode);
+            if (data != null)
+            {
+              return true;
+            }
+            return false;
+        }
 
         /// <summary>
         /// Mains the data grid binding.
@@ -88,6 +108,41 @@ namespace TechSupport.Controller
             List<OpenIncidentsVM> dataTable = _dbAccess.ReturnIncidentsDataTable(sql);
 
             return dataTable;
+        }
+
+        /// <summary>
+        /// Search Incident.
+        /// </summary>
+        /// <param name="incidentId">Incident id.</param>
+        /// <returns>Incident 
+        /// </returns>
+        public SearchIncidentVM SearchIncidentList(int incidentId)
+        {
+            string sql = "select I.ProductCode As [ProductCode] ,convert(varchar(10),DateOpened,101) As DateOpened, C.Name[Customer],T.TechID, T.Name As Technician, I.Title, I.Description, I.DateClosed  from Incidents I inner join Customers C on I.CustomerID=C.CustomerID Left join Technicians T on I.TechID=T.TechID where I.IncidentID='" + incidentId + "'";
+
+            SearchIncidentVM searchIncidentVM = _incidentDAL.SearchIncidents(sql);
+
+            return searchIncidentVM;
+        }
+        /// <summary>
+        /// Close Incident method.
+        /// </summary>
+        /// <param name="Incident">Incident</param>
+        /// <returns>Confirmation message
+        /// </returns>
+        public string CloseIncidents(Incidents incident)
+        {
+            return _incidentDAL.CloseIncidents(incident);
+        }
+        /// <summary>
+        /// Update Incident method.
+        /// </summary>
+        /// <param name="Incident">Incident</param>
+        /// <returns>Confirmation message
+        /// </returns>
+        public string UpdateIncidents(Incidents incident)
+        {
+            return this._incidentDAL.UpdateIncidents(incident);
         }
 
     }
