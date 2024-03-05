@@ -16,7 +16,7 @@ namespace TechSupport.DAL
         public List<Products> GetProducts()
         {
             List<Products> productList = new List<Products>();
-            string sqlStatement = "select * from Products";
+            string sqlStatement = "select ProductCode,Name from Products";
             using (SqlConnection connection = DBAccess.GetSqlConnection())
             {
                 connection.Open();
@@ -30,8 +30,6 @@ namespace TechSupport.DAL
                             Products products = new Products();
                             products.ProductCode = (string)reader["ProductCode"];
                             products.Name = (string)reader["Name"];
-                            products.Version = (Decimal)reader["Version"];
-                            products.ReleaseDate = (DateTime)reader["ReleaseDate"];
                             productList.Add(products);
                         }
                     }
