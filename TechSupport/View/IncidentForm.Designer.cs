@@ -32,239 +32,198 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblDescription = new Label();
-            lblTitle = new Label();
-            lblProduct = new Label();
-            lblCustomer = new Label();
             ClearIncidentBtn = new Button();
-            lblMessage = new Label();
-            CreateIncidentBtn = new Button();
-            txtDescription = new TextBox();
-            label5 = new Label();
-            txtTitle = new TextBox();
-            label4 = new Label();
-            cmbProduct = new ComboBox();
-            label3 = new Label();
-            cmbCustomer = new ComboBox();
+            lblDescription = new Label();
             label2 = new Label();
-            tabControl1 = new TabControl();
-            tabAddIncident = new TabPage();
-            tabControl1.SuspendLayout();
-            tabAddIncident.SuspendLayout();
+            lblTitle = new Label();
+            cmbCustomer = new ComboBox();
+            lblProduct = new Label();
+            label3 = new Label();
+            lblCustomer = new Label();
+            cmbProduct = new ComboBox();
+            label4 = new Label();
+            lblMessage = new Label();
+            txtTitle = new TextBox();
+            txtDescription = new TextBox();
+            CreateIncidentBtn = new Button();
+            label5 = new Label();
             SuspendLayout();
-            // 
-            // lblDescription
-            // 
-            lblDescription.AutoSize = true;
-            lblDescription.Location = new Point(178, 188);
-            lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(38, 15);
-            lblDescription.TabIndex = 29;
-            lblDescription.Text = "label9";
-            // 
-            // lblTitle
-            // 
-            lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(178, 140);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(38, 15);
-            lblTitle.TabIndex = 28;
-            lblTitle.Text = "label8";
-            // 
-            // lblProduct
-            // 
-            lblProduct.AutoSize = true;
-            lblProduct.Location = new Point(178, 93);
-            lblProduct.Name = "lblProduct";
-            lblProduct.Size = new Size(38, 15);
-            lblProduct.TabIndex = 27;
-            lblProduct.Text = "label7";
-            // 
-            // lblCustomer
-            // 
-            lblCustomer.AutoSize = true;
-            lblCustomer.Location = new Point(178, 45);
-            lblCustomer.Name = "lblCustomer";
-            lblCustomer.Size = new Size(38, 15);
-            lblCustomer.TabIndex = 26;
-            lblCustomer.Text = "label6";
             // 
             // ClearIncidentBtn
             // 
-            ClearIncidentBtn.Location = new Point(393, 256);
-            ClearIncidentBtn.Margin = new Padding(3, 2, 3, 2);
+            ClearIncidentBtn.Location = new Point(453, 389);
             ClearIncidentBtn.Name = "ClearIncidentBtn";
-            ClearIncidentBtn.Size = new Size(144, 33);
-            ClearIncidentBtn.TabIndex = 25;
+            ClearIncidentBtn.Size = new Size(165, 44);
+            ClearIncidentBtn.TabIndex = 40;
             ClearIncidentBtn.Text = "Clear";
             ClearIncidentBtn.UseVisualStyleBackColor = true;
             ClearIncidentBtn.Click += ClearIncidentBtn_Click;
             // 
-            // lblMessage
+            // lblDescription
             // 
-            lblMessage.AutoSize = true;
-            lblMessage.Location = new Point(185, 227);
-            lblMessage.Name = "lblMessage";
-            lblMessage.Size = new Size(38, 15);
-            lblMessage.TabIndex = 24;
-            lblMessage.Text = "label6";
+            lblDescription.AutoSize = true;
+            lblDescription.Location = new Point(210, 302);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(50, 20);
+            lblDescription.TabIndex = 44;
+            lblDescription.Text = "label9";
             // 
-            // CreateIncidentBtn
+            // label2
             // 
-            CreateIncidentBtn.Location = new Point(178, 256);
-            CreateIncidentBtn.Margin = new Padding(3, 2, 3, 2);
-            CreateIncidentBtn.Name = "CreateIncidentBtn";
-            CreateIncidentBtn.Size = new Size(144, 33);
-            CreateIncidentBtn.TabIndex = 23;
-            CreateIncidentBtn.Text = "Create Incident";
-            CreateIncidentBtn.UseVisualStyleBackColor = true;
-            CreateIncidentBtn.Click += CreateIncidentBtn_Click;
+            label2.AutoSize = true;
+            label2.Location = new Point(97, 75);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 20);
+            label2.TabIndex = 30;
+            label2.Text = "Customer";
             // 
-            // txtDescription
+            // lblTitle
             // 
-            txtDescription.Location = new Point(178, 161);
-            txtDescription.Margin = new Padding(3, 2, 3, 2);
-            txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(412, 23);
-            txtDescription.TabIndex = 22;
-            txtDescription.TextChanged += txtDescription_TextChanged;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(79, 161);
-            label5.Name = "label5";
-            label5.Size = new Size(67, 15);
-            label5.TabIndex = 21;
-            label5.Text = "Description";
-            // 
-            // txtTitle
-            // 
-            txtTitle.Location = new Point(178, 114);
-            txtTitle.Margin = new Padding(3, 2, 3, 2);
-            txtTitle.Name = "txtTitle";
-            txtTitle.Size = new Size(409, 23);
-            txtTitle.TabIndex = 20;
-            txtTitle.TextChanged += txtTitle_TextChanged;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(79, 114);
-            label4.Name = "label4";
-            label4.Size = new Size(29, 15);
-            label4.TabIndex = 19;
-            label4.Text = "Title";
-            // 
-            // cmbProduct
-            // 
-            cmbProduct.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbProduct.FormattingEnabled = true;
-            cmbProduct.Location = new Point(178, 66);
-            cmbProduct.Margin = new Padding(3, 2, 3, 2);
-            cmbProduct.Name = "cmbProduct";
-            cmbProduct.Size = new Size(411, 23);
-            cmbProduct.TabIndex = 18;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(79, 66);
-            label3.Name = "label3";
-            label3.Size = new Size(49, 15);
-            label3.TabIndex = 17;
-            label3.Text = "Product";
+            lblTitle.AutoSize = true;
+            lblTitle.Location = new Point(210, 238);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(50, 20);
+            lblTitle.TabIndex = 43;
+            lblTitle.Text = "label8";
             // 
             // cmbCustomer
             // 
             cmbCustomer.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCustomer.FormattingEnabled = true;
-            cmbCustomer.Location = new Point(178, 18);
-            cmbCustomer.Margin = new Padding(3, 2, 3, 2);
+            cmbCustomer.Location = new Point(207, 72);
             cmbCustomer.Name = "cmbCustomer";
-            cmbCustomer.Size = new Size(408, 23);
-            cmbCustomer.TabIndex = 16;
+            cmbCustomer.Size = new Size(466, 28);
+            cmbCustomer.TabIndex = 31;
             // 
-            // label2
+            // lblProduct
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(79, 18);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 15);
-            label2.TabIndex = 15;
-            label2.Text = "Customer";
+            lblProduct.AutoSize = true;
+            lblProduct.Location = new Point(210, 175);
+            lblProduct.Name = "lblProduct";
+            lblProduct.Size = new Size(50, 20);
+            lblProduct.TabIndex = 42;
+            lblProduct.Text = "label7";
             // 
-            // tabControl1
+            // label3
             // 
-            tabControl1.Controls.Add(tabAddIncident);
-            tabControl1.Location = new Point(10, 9);
-            tabControl1.Margin = new Padding(3, 2, 3, 2);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(656, 378);
-            tabControl1.TabIndex = 30;
+            label3.AutoSize = true;
+            label3.Location = new Point(97, 139);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 20);
+            label3.TabIndex = 32;
+            label3.Text = "Product";
             // 
-            // tabAddIncident
+            // lblCustomer
             // 
-            tabAddIncident.Controls.Add(ClearIncidentBtn);
-            tabAddIncident.Controls.Add(lblDescription);
-            tabAddIncident.Controls.Add(label2);
-            tabAddIncident.Controls.Add(lblTitle);
-            tabAddIncident.Controls.Add(cmbCustomer);
-            tabAddIncident.Controls.Add(lblProduct);
-            tabAddIncident.Controls.Add(label3);
-            tabAddIncident.Controls.Add(lblCustomer);
-            tabAddIncident.Controls.Add(cmbProduct);
-            tabAddIncident.Controls.Add(label4);
-            tabAddIncident.Controls.Add(lblMessage);
-            tabAddIncident.Controls.Add(txtTitle);
-            tabAddIncident.Controls.Add(CreateIncidentBtn);
-            tabAddIncident.Controls.Add(label5);
-            tabAddIncident.Controls.Add(txtDescription);
-            tabAddIncident.Location = new Point(4, 24);
-            tabAddIncident.Margin = new Padding(3, 2, 3, 2);
-            tabAddIncident.Name = "tabAddIncident";
-            tabAddIncident.Padding = new Padding(3, 2, 3, 2);
-            tabAddIncident.Size = new Size(648, 350);
-            tabAddIncident.TabIndex = 1;
-            tabAddIncident.Text = "Add";
-            tabAddIncident.UseVisualStyleBackColor = true;
+            lblCustomer.AutoSize = true;
+            lblCustomer.Location = new Point(210, 111);
+            lblCustomer.Name = "lblCustomer";
+            lblCustomer.Size = new Size(50, 20);
+            lblCustomer.TabIndex = 41;
+            lblCustomer.Text = "label6";
+            // 
+            // cmbProduct
+            // 
+            cmbProduct.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbProduct.FormattingEnabled = true;
+            cmbProduct.Location = new Point(207, 136);
+            cmbProduct.Name = "cmbProduct";
+            cmbProduct.Size = new Size(469, 28);
+            cmbProduct.TabIndex = 33;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(97, 203);
+            label4.Name = "label4";
+            label4.Size = new Size(38, 20);
+            label4.TabIndex = 34;
+            label4.Text = "Title";
+            // 
+            // lblMessage
+            // 
+            lblMessage.AutoSize = true;
+            lblMessage.Location = new Point(218, 354);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(50, 20);
+            lblMessage.TabIndex = 39;
+            lblMessage.Text = "label6";
+            // 
+            // txtTitle
+            // 
+            txtTitle.Location = new Point(207, 200);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(467, 27);
+            txtTitle.TabIndex = 35;
+            // 
+            // txtDescription
+            // 
+            txtDescription.Location = new Point(207, 263);
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(470, 27);
+            txtDescription.TabIndex = 37;
+            // 
+            // CreateIncidentBtn
+            // 
+            CreateIncidentBtn.Location = new Point(207, 389);
+            CreateIncidentBtn.Name = "CreateIncidentBtn";
+            CreateIncidentBtn.Size = new Size(165, 44);
+            CreateIncidentBtn.TabIndex = 38;
+            CreateIncidentBtn.Text = "Create Incident";
+            CreateIncidentBtn.UseVisualStyleBackColor = true;
+            CreateIncidentBtn.Click += CreateIncidentBtn_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(97, 266);
+            label5.Name = "label5";
+            label5.Size = new Size(85, 20);
+            label5.TabIndex = 36;
+            label5.Text = "Description";
             // 
             // IncidentForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(677, 411);
-            Controls.Add(tabControl1);
-            Margin = new Padding(3, 2, 3, 2);
+            Controls.Add(ClearIncidentBtn);
+            Controls.Add(lblDescription);
+            Controls.Add(label2);
+            Controls.Add(lblTitle);
+            Controls.Add(cmbCustomer);
+            Controls.Add(lblProduct);
+            Controls.Add(label3);
+            Controls.Add(lblCustomer);
+            Controls.Add(cmbProduct);
+            Controls.Add(label4);
+            Controls.Add(lblMessage);
+            Controls.Add(txtTitle);
+            Controls.Add(txtDescription);
+            Controls.Add(CreateIncidentBtn);
+            Controls.Add(label5);
             Name = "IncidentForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Add Incident";
+            Size = new Size(774, 548);
             Load += AddNewIncident_Load;
-            tabControl1.ResumeLayout(false);
-            tabAddIncident.ResumeLayout(false);
-            tabAddIncident.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Label lblDescription;
-        private Label lblTitle;
-        private Label lblProduct;
-        private Label lblCustomer;
         private Button ClearIncidentBtn;
-        private Label lblMessage;
-        private Button CreateIncidentBtn;
-        private TextBox txtDescription;
-        private Label label5;
-        private TextBox txtTitle;
-        private Label label4;
-        private ComboBox cmbProduct;
-        private Label label3;
-        private ComboBox cmbCustomer;
+        private Label lblDescription;
         private Label label2;
-        private TabControl tabControl1;
-        private TabPage tabAddIncident;
+        private Label lblTitle;
+        private ComboBox cmbCustomer;
+        private Label lblProduct;
+        private Label label3;
+        private Label lblCustomer;
+        private ComboBox cmbProduct;
+        private Label label4;
+        private Label lblMessage;
+        private TextBox txtTitle;
+        private TextBox txtDescription;
+        private Button CreateIncidentBtn;
+        private Label label5;
     }
 }
